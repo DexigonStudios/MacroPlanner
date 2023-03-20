@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MacroPlanner</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="topheader">
+            <nav>
+                <ui>
+                    <li class="logo"><a href="index.html">Logo</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ui>
+            </nav>
+        </header>
+        <header class="recipesheader">
+            <div>
+                <h1 class="RecipeTitle">
+                    Recipes
+                </h1>
+            </div>
+        </header>
+        <section>
+            <div class="recipesearchgrid">
+                <div class="recipesearchimage">
+                </div>
+                <div class= "recipesearchdiv">
+                    <div class = "recipesearchdivtop">
+                        <div class="caloriesinputdiv">
+                            <li class="recipesearchinputtext">Calories1</li>
+                            <input class ="calorieinputbox">
+                        </div>
+                        <div class="caloriesinputdiv">
+                            <li class="recipesearchinputtext">Calories1</li>
+                            <input class ="calorieinputbox">
+                        </div>
+                        <div class="caloriesinputdiv">
+                            <li class="recipesearchinputtext">Calories1</li>
+                            <input class ="calorieinputbox">
+                        </div>
+                        <div id="test" style="display: none">
+                            <div class="caloriesinputdiv">
+                                <li class="recipesearchinputtext">Calories2</li>
+                                <input class ="calorieinputbox">
+                            </div>
+                            <div class="caloriesinputdiv">
+                                <li class="recipesearchinputtext">Calories3</li>
+                                <input class ="calorieinputbox">
+                            </div>
+                            <div class="caloriesinputdiv">
+                                <li class="recipesearchinputtext">Calories2</li>
+                                <input class ="calorieinputbox">
+                            </div>
+                            <div class="caloriesinputdiv">
+                                <li class="recipesearchinputtext">Calories2</li>
+                                <input class ="calorieinputbox">
+                            </div>
+                            <div class="caloriesinputdiv">
+                                <li class="recipesearchinputtext">Calories2</li>
+                                <input class ="calorieinputbox">
+                            </div>
+                            <div class="caloriesinputdiv">
+                                <li class="recipesearchinputtext">Calories2</li>
+                                <input class ="calorieinputbox">
+                            </div>
+                            <div class="caloriesinputdiv">
+                                <li class="recipesearchinputtext">Calories2</li>
+                                <input class ="calorieinputbox">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recipesearchdivbottom">
+                        <button class="showhideadvanced" id="showhideadvanced">Show/Hide Advanced Options</button>
+                        <button class ="findrecipesearch" id="findrecipesearch">Find Recipes</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="placeholderbox"></div>
+        </section>
+        <footer>
+            123 Main Street • 555-555-5555 • support@us.com
+        </footer>
+    </body>
+    <script>
+        const showhideadvanced = document.querySelector("#showhideadvanced");
+        const test = document.querySelector("#test");
+
+        showhideadvanced.addEventListener("click", function(){
+            if(test.style.display != "block"){
+                test.style.display = "block";
+            }
+            else{
+                test.style.display = "none";
+            }
+        })
+    </script>
+</html>
