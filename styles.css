@@ -1,5 +1,4 @@
 body {
-    color: white;
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
@@ -18,8 +17,8 @@ body {
     /* background-image: url(images/pizza-preparation-with-ingredients-on-754245.jpg); */
     background-size: 100%;
     background-position: center;
-    padding: 20px;
-    height: 400px;
+    padding: 20px 20px 20px 20px;
+    height: 450px;
     text-align: center;
 }
 
@@ -133,12 +132,12 @@ ul {
 }
 
 
-section {
+/* section {
     background: rgb(255, 255, 255);
     color: gray;
     display: flex;
     flex-direction: row;
-}
+} */
 
 .homefeatureboxdiv{
     text-align: center;
@@ -220,7 +219,7 @@ footer {
     border: 1px solid black;
     border-radius: 15px;
     background-color: black;
-    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url('images/organic-food-background-assorted-raw-2344225.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url('images/organic-food-background-assorted-raw-2344225-transformed.jpeg');
     /* background-image: url(images/organic-food-background-assorted-raw-2344225.jpg); */
     background-size: 160%;
     background-position: center;
@@ -305,7 +304,7 @@ footer {
     background-color:rgba(255, 60, 0, 0.473);
     height: 75px;
     width: 100%;
-    margin: 150px 0px 50px 0px;
+    margin: 80px 0px 80px 0px;
     padding: 12px 0px 0px 12.5%;
     text-align: left;
     color: white;
@@ -321,7 +320,7 @@ footer {
 }
 
 .reciperecentlyaddedslider {
-    height: 350px;
+    height: 250px;
     margin: auto;
     position: relative;
     width:100%;
@@ -354,7 +353,7 @@ footer {
 
 .reciperecentlyaddedsliderdiv {
     display: flex;
-    width: calc(350px * 16);
+    width: calc(250px * 16);
     animation: recipescroll 25s linear infinite;
  }
 
@@ -363,8 +362,8 @@ footer {
  } */
 
  .reciperecentlyaddedslide {
-    height: 300px;
-    width: 350px;
+    height: 200px;
+    width: 250px;
     display: flex;
     padding: 20px;
     place-items: center;
@@ -382,7 +381,7 @@ footer {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-350px * 8));
+        transform: translateX(calc(-250px * 8));
     }
  }
 
@@ -432,7 +431,7 @@ footer {
 .recipeslidecardtitle {
     color: rgb(206, 0, 0);
     font-weight: 600;
-    font-size: 30px;
+    font-size: 24px;
     text-align: left;
     text-decoration: none;
 }
@@ -440,7 +439,13 @@ footer {
 .recipeslidecardinfo {
     color: rgb(99, 99, 99);
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
     text-align: left;
     text-decoration: none;
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 300px;
 }
