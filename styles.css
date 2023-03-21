@@ -110,7 +110,7 @@ ul {
 .homefeaturehor {
     width: 30%;
     display:inline-block;
-    padding: 110px 0px 100px 0px;
+    padding: 60px 0px 100px 0px;
     vertical-align: top;
 }
 
@@ -220,9 +220,9 @@ footer {
     border: 1px solid black;
     border-radius: 15px;
     background-color: black;
-    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3) ), url('images/organic-food-background-assorted-raw-2344225.jpg');
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5) ), url('images/organic-food-background-assorted-raw-2344225.jpg');
     /* background-image: url(images/organic-food-background-assorted-raw-2344225.jpg); */
-    background-size: 100%;
+    background-size: 160%;
     background-position: center;
     width: 100%;
     text-align: center;
@@ -391,11 +391,10 @@ footer {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: all 0.5s cubic-bezier(0.6, -.4, 0.4, 1.6);
+    transition: all 0.5s cubic-bezier(0.4, -.2, 0.4, 1.6);
 }
 
-.recipeslidecard:hover {
-    transform: translateZ(15px);
+.reciperecentlyaddedslide:hover .recipeslidecard{
     transform: rotateY(180deg);
 }
 
@@ -425,7 +424,7 @@ footer {
 } 
 
 .recipeslidecardback div{
-    position: relsative;
+    position: relative;
     top: 200;
     padding: 0px 20px 0px 20px;
 }
