@@ -437,6 +437,7 @@ footer {
     text-decoration: none;
     margin: 14px 14px 0px 14px;
     overflow: hidden;
+
 }
 
 .recipeslidecardinfo {
@@ -459,8 +460,79 @@ footer {
 
 /* Recipe Page */
 
+.recipepagetop {
+    text-align: center;
+    margin: 0 auto;
+    padding: 100px 0px 100px 0px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.recipepageinfo {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: gray 0px 0px 10px;
+    width: 700px;
+    display:inline-block;
+    text-align: left;
+    padding: 0px;
+    padding: 0px 0px 50px 0px;
+    vertical-align: top;
+}
+
+.recipepageimage {
+    border-radius: 15px;
+    box-shadow: gray 0px 0px 10px;
+    display:inline-block;
+    margin: 0px;
+    width: 700px;
+    height: 450px;
+    overflow: hidden;
+}
+
 .currentrecipeimage {
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
+
+.recipename {
+    margin: 20px 20px 20px 40px;
+    color: black;
+    font-size: 35px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.recipepageinfoinner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipepageinfoinnertable1, .recipepageinfoinnertable2 {
+    vertical-align: middle;
+    /* border-collapse: collapse; */
+    width: 45%;
+}
+
+.recipepageinfoinnertable1 tr, .recipepageinfoinnertable2 tr{
+    height: 35px;
+    text-indent: 40px;
+    color: gray;
+    font-size: 22px;
+    font-weight: 500;
+    position: relative;
+}
+
+
+.recipeinfodivider {
+    height: 140px;
+    width: 3px;
+    border-radius: 20px;
+    background-color: rgba(128, 128, 128, 0.329);
+  }

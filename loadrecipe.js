@@ -62,19 +62,82 @@
 
 window.addEventListener('load', () => {
 
-    let parameters= new URLSearchParams( window.location.search );
-    recipe = parameters.get( "recipe");
+    let parameters = new URLSearchParams(window.location.search);
+    recipe = parameters.get("recipe");
     currentrecipe = recipe;
 })
 
 fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNGQMOT8xvXCzScRtYXEhzVA9IhU7LN6ErozdCw/exec')
     .then(res => res.json())
     .then(data => {
-        let temp = [];
+        let recipelist = [];
 
-        Object.values(data).forEach(val => temp.push(val));
+        Object.values(data).forEach(val => recipelist.push(val));
 
-        document.getElementById("recipename").innerHTML = temp[0][recipe][1];
-        document.getElementById("imagetest").src= temp[0][recipe][8];
+        document.getElementById("recipename").innerHTML = recipelist[0][recipe][1];
+        document.getElementById("recipeservingtitle").innerHTML = "Servings";
+        document.getElementById("recipeserving").innerHTML = recipelist[0][recipe][2];
+        document.getElementById("recipetimetitle").innerHTML = "Time";
+        document.getElementById("recipetime").innerHTML = recipelist[0][recipe][3] + " minutes";
+        document.getElementById("recipecalorie").innerHTML = recipelist[0][recipe][4] + " Calories";
+        document.getElementById("recipeprotein").innerHTML = recipelist[0][recipe][5] + "g Protein";
+        document.getElementById("recipecarb").innerHTML = recipelist[0][recipe][6] + "g Carbs";
+        document.getElementById("recipefat").innerHTML = recipelist[0][recipe][7] + "g Fat";
+        document.getElementById("imagetest").src = recipelist[0][recipe][8];
+
+
+        var ingredientlist = recipelist[0][recipe][10].split('@@');
+
+        if(ingredientlist.length > 1){
+            for (let i = 0; i < ingredientlist.length; i += 2) {
+                document.getElementById("ingredientstitle" + i / 2).innerHTML = ingredientlist[i];
+                var ingredientlist2 = ingredientlist[i + 1];
+    
+                ingredientlist2 = ingredientlist2.split('@');
+    
+                for (let j = 0; j < ingredientlist2.length; j++) {
+                    let ibox = document.createElement('tr');
+                    document.getElementById("ingredients" + i / 2).append(ibox);
+                    ibox.innerHTML = ingredientlist2[j];
+                }
+            }
+        } else {
+            ingredientlist2 = recipelist[0][recipe][10].split('@');
+            for (let j = 0; j < ingredientlist2.length; j++) {
+                let ibox = document.createElement('tr');
+                document.getElementById("ingredients0").append(ibox);
+                ibox.innerHTML = ingredientlist2[j];
+            }
+        }
+
+
+        var stepslist = recipelist[0][recipe][11].split('@@');
+
+        if(stepslist.length > 1){
+            for (let i = 0; i < stepslist.length; i += 2) {
+                document.getElementById("stepstitle" + i / 2).innerHTML = stepslist[i];
+                var stepslist2 = stepslist[i + 1];
+    
+                stepslist2 = stepslist2.split('@');
+    
+                for (let j = 0; j < stepslist2.length; j++) {
+                    let ibox = document.createElement('tr');
+                    document.getElementById("steps" + i / 2).append(ibox);
+                    ibox.innerHTML = j+1 + ") " + stepslist2[j];
+                }
+            }
+        } else {
+            stepslist2 = recipelist[0][recipe][11].split('@');
+            for (let j = 0; j < stepslist2.length; j++) {
+                let ibox = document.createElement('tr');
+                document.getElementById("steps0").append(ibox);
+                ibox.innerHTML = j+1 + ") " + stepslist2[j];
+            }
+        }
+
+
+
+
+
     })
 
