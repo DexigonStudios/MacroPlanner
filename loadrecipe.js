@@ -74,6 +74,9 @@ fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNG
 
         Object.values(data).forEach(val => recipelist.push(val));
 
+        document.getElementById("ingredientmaintitle").innerHTML = "Ingredients";
+        document.getElementById("stepmaintitle").innerHTML = "Steps";
+
         document.getElementById("recipename").innerHTML = recipelist[0][recipe][1];
         document.getElementById("recipeservingtitle").innerHTML = "Servings";
         document.getElementById("recipeserving").innerHTML = recipelist[0][recipe][2];
@@ -122,16 +125,22 @@ fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNG
     
                 for (let j = 0; j < stepslist2.length; j++) {
                     let ibox = document.createElement('tr');
+                    let iboxnum = document.createElement('div');
+                    document.getElementById("steps" + i / 2).append(iboxnum);
+                    iboxnum.innerHTML = j+1;
                     document.getElementById("steps" + i / 2).append(ibox);
-                    ibox.innerHTML = j+1 + ") " + stepslist2[j];
+                    ibox.innerHTML = stepslist2[j];
                 }
             }
         } else {
             stepslist2 = recipelist[0][recipe][11].split('@');
             for (let j = 0; j < stepslist2.length; j++) {
                 let ibox = document.createElement('tr');
-                document.getElementById("steps0").append(ibox);
-                ibox.innerHTML = j+1 + ") " + stepslist2[j];
+                    let iboxnum = document.createElement('div');
+                    document.getElementById("steps0").append(iboxnum);
+                    iboxnum.innerHTML = j+1;
+                    document.getElementById("steps0").append(ibox);
+                    ibox.innerHTML = stepslist2[j];
             }
         }
 

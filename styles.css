@@ -7,7 +7,10 @@ body {
     background-color: rgb(255, 255, 255);
     text-align: center;
     padding: 5px;
+    position: sticky;
+    top: 0;
     height: 50px;
+    z-index: 25;
 }
 
 
@@ -183,10 +186,41 @@ footer {
     height: 1200px;
 }
 
+.emptybox {
+    height: 50px;
+}
+
 
 
 
 /* Recipes */
+
+.tempcover {
+    background-color: rgba(0, 0, 0, 0.281);
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+    z-index: 8;
+    margin: 0 auto;
+    height: 730px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.recipesearchcomingsoonbanner {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 120px;  
+    z-index: 10;
+    width: 100%;
+    height: 120px;
+    top: 280px;
+    background-color: rgb(129, 129, 129);
+    box-shadow: gray 0px 0px 10px;
+    position: absolute;
+}
 
 .recipesheader {
     height: 65px;
@@ -500,10 +534,10 @@ footer {
 }
 
 .recipename {
-    margin: 20px 20px 20px 40px;
+    margin: 32px 25px 45px 32px;
     color: black;
-    font-size: 35px;
-    font-weight: 700;
+    font-size: 40px;
+    font-weight: 800;
     text-decoration: none;
 }
 
@@ -521,8 +555,8 @@ footer {
 }
 
 .recipepageinfoinnertable1 tr, .recipepageinfoinnertable2 tr{
-    height: 35px;
-    text-indent: 40px;
+    height: 40px;
+    text-indent: 30px;
     color: gray;
     font-size: 22px;
     font-weight: 500;
@@ -531,8 +565,111 @@ footer {
 
 
 .recipeinfodivider {
-    height: 140px;
-    width: 3px;
+    height: 150px;
+    width: 4px;
     border-radius: 20px;
-    background-color: rgba(128, 128, 128, 0.329);
+    /* background-color: rgba(128, 128, 128, 0.329); */
+    background: linear-gradient(
+    transparent -20%,
+    rgba(173, 173, 173, 0.548) 50%,
+    transparent 120%
+    );
+  }
+
+
+.recipepagemain {
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0px 0px 80px 0px;
+    width: 100%;
+}
+
+.ingredientstepinfo {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: gray 0px 0px 10px;
+    width: 50%;
+    display:inline-block;
+    text-align: left;
+    margin: 0 auto;
+    padding: 60px 60px 0px 60px;
+    vertical-align: top;
+}
+
+.ingredientinfoheader1 {
+    color: black;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0px 0px 60px 0px;
+    text-decoration: none;
+}
+
+.ingredientstepinfoheader1 {
+    color: black;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0px 0px 20px 0px;
+    text-decoration: none;
+}
+
+.ingredientstepinfoheader2 {
+    color: rgb(32, 32, 32);
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0px 4px 0px;
+    text-decoration: none;
+}
+
+.ingredientinfotext, .stepinfotext{
+    display:'flex'
+}
+
+.stepinfotext div{
+    color: rgb(99, 138, 209);
+    font-size: 40px;
+    font-weight: 800;
+    text-decoration: none;
+    height: 35px;
+    line-height: 35px;
+    width: 80px;
+    text-align: center;
+    position: relative;
+    top: 32px;
+    left: -15px;
+    z-index: 20;
+}
+
+.ingredientinfotext tr{
+    color: gray;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 50px;
+    text-decoration: none;
+    display: list-item;
+    margin-left : 1em;
+}
+
+.stepinfotext tr{
+    color: gray;
+    font-size: 20px;
+    font-weight: 500;
+    text-indent: 65px;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.ingredientstepdivider {
+    height: 6px;
+    width: 100%;
+    border-radius: 20px;
+    background: linear-gradient(
+    to right,
+    transparent 00%,
+    rgba(173, 173, 173, 0.548) 50%,
+    transparent 100%
+    );
+    margin-bottom: 60px;
   }
