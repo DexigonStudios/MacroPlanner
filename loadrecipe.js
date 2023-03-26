@@ -64,7 +64,6 @@ window.addEventListener('load', () => {
 
     let parameters = new URLSearchParams(window.location.search);
     recipe = parameters.get("recipe");
-    currentrecipe = recipe;
 })
 
 fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNGQMOT8xvXCzScRtYXEhzVA9IhU7LN6ErozdCw/exec')

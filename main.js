@@ -51,54 +51,59 @@ fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNG
 
         Object.values(data).forEach(val => temp.push(val));
 
-        
-        document.getElementById("1i").src= temp[0][1][8];
-        document.getElementById("2i").src= temp[0][2][8];
-        document.getElementById("3i").src= temp[0][3][8];
-        document.getElementById("4i").src= temp[0][4][8];
-        document.getElementById("5i").src= temp[0][5][8];
-        document.getElementById("6i").src= temp[0][6][8];
-        document.getElementById("7i").src= temp[0][7][8];
-        document.getElementById("8i").src= temp[0][8][8];
 
-        document.getElementById("1t").innerHTML= temp[0][1][1];
-        document.getElementById("2t").innerHTML= temp[0][2][1];
-        document.getElementById("3t").innerHTML= temp[0][3][1];
-        document.getElementById("4t").innerHTML= temp[0][4][1];
-        document.getElementById("5t").innerHTML= temp[0][5][1];
-        document.getElementById("6t").innerHTML= temp[0][6][1];
-        document.getElementById("7t").innerHTML= temp[0][7][1];
-        document.getElementById("8t").innerHTML= temp[0][8][1];
-
-        document.getElementById("1i2").src= temp[0][1][8];
-        document.getElementById("2i2").src= temp[0][2][8];
-        document.getElementById("3i2").src= temp[0][3][8];
-        document.getElementById("4i2").src= temp[0][4][8];
-        document.getElementById("5i2").src= temp[0][5][8];
-        document.getElementById("6i2").src= temp[0][6][8];
-        document.getElementById("7i2").src= temp[0][7][8];
-        document.getElementById("8i2").src= temp[0][8][8];
-
-        document.getElementById("1t2").innerHTML= temp[0][1][1];
-        document.getElementById("2t2").innerHTML= temp[0][2][1];
-        document.getElementById("3t2").innerHTML= temp[0][3][1];
-        document.getElementById("4t2").innerHTML= temp[0][4][1];
-        document.getElementById("5t2").innerHTML= temp[0][5][1];
-        document.getElementById("6t2").innerHTML= temp[0][6][1];
-        document.getElementById("7t2").innerHTML= temp[0][7][1];
-        document.getElementById("8t2").innerHTML= temp[0][8][1];
+        for(let i = 1; i<=8; i++){
+            document.getElementById(i+"i").src = temp[0][i][8];
+            document.getElementById(i+"t").innerHTML = temp[0][i][1];
+            document.getElementById(i+"i2").src = temp[0][i][8];
+            document.getElementById(i+"t2").innerHTML = temp[0][i][1];
+            document.getElementById(i+"cal").innerHTML = temp[0][i][4] + " Calories";
+            document.getElementById(i+"pro").innerHTML = temp[0][i][5] + "g Protein";
+            document.getElementById(i+"car").innerHTML = temp[0][i][6] + "g Carbs";
+            document.getElementById(i+"fat").innerHTML = temp[0][i][7] + "g Fat";
+            document.getElementById(i+"cal2").innerHTML = temp[0][i][4] + " Calories";
+            document.getElementById(i+"pro2").innerHTML = temp[0][i][5] + "g Protein";
+            document.getElementById(i+"car2").innerHTML = temp[0][i][6] + "g Carbs";
+            document.getElementById(i+"fat2").innerHTML = temp[0][i][7] + "g Fat";
+        }
     })
 
 
-function openRecipe(btn){
+function openRecipe(btn) {
     alert(btn.id);
 }
 
 let recipeCards = document.querySelectorAll(".reciperecentlyaddedslide");
-for(let i = 0; i< recipeCards.length; i++) {
-    recipeCards[i].addEventListener("click", function(){
+for (let i = 0; i < recipeCards.length; i++) {
+    recipeCards[i].addEventListener("click", function () {
         sessionStorage.setItem("recipe", this.id);
         // temploadrecipe.innerHTML = this.id;
         location.href = "recipepage.html?recipe=" + this.id;
     });
+}
+
+function searchrecipe() {
+    // alert(document.getElementById("calorieinput").value.length == 0);
+    var calorie = document.getElementById("calorieinput").value;
+    var protein = document.getElementById("proteininput").value;
+    var carbs = document.getElementById("carbsinput").value;
+    var fat = document.getElementById("fatinput").value;
+    if(calorie.length == 0 && protein.length == 0 && carbs.length == 0 && fat.length == 0){
+        alert("Invalid. Input is required to search");
+    } else {
+        if(calorie.length == 0){
+            calorie = "null";
+        }
+        if(protein.length == 0){
+            protein = "null";
+        }
+        if(carbs.length == 0){
+            carbs = "null";
+        }
+        if(fat.length == 0){
+            fat = "null";
+        }
+    
+        location.href = "recipesearch.html?calorie=" + calorie + "&protein=" + protein + "&carbs=" + carbs + "&fat=" + fat;
+    }
 }
