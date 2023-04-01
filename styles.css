@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
+
 .topheader{
     background-color: rgb(255, 255, 255);
     text-align: center;
@@ -510,6 +511,15 @@ input::-webkit-inner-spin-button {
     transform: rotateY(180deg) scale(90%);
 }
 
+.reciperecentlyaddedslide{
+    transition: all 0.4s ease;
+}
+
+.reciperecentlyaddedsliderdiv:has(.reciperecentlyaddedslide:hover) .reciperecentlyaddedslide:not(:hover){
+    filter: brightness(70%);
+    transform: scale(88%);
+}
+
 .recipeslidecardfront {
     border: 1px solid white;
     border-radius: 15px;
@@ -761,4 +771,61 @@ input::-webkit-inner-spin-button {
     font-size: 20px;
     font-weight: 500;
     text-decoration: none;
+}
+
+/* Contact */
+
+.contactcontainer {
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactform {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.contactform h3 {
+    color: gray;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.contactform input, .contactform textarea{
+    font-family: 'Open Sans', sans-serif;
+    border: 0;
+    margin: 10px 0px 0px 0px;
+    padding: 20px;
+    outline: none;
+    background-color: rgb(240, 240, 240);
+    font-size: 16px;
+}
+
+.contactform button {
+    padding: 15px;
+    background-color: rgb(255, 123, 0);
+    color: white;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 200px;
+    margin: 20px auto 0;
+    border-radius: 30px;
+}
+
+.contactform p {
+    border: 0;
+    color: red;
+    margin: 5px 0px 10px 0px;
+    font-size: 14px;
 }

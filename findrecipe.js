@@ -38,21 +38,42 @@ fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNG
             })
         }
 
-        
+
         document.getElementById("resultsfoundtext").innerHTML = "Results Found: " + filteredlist.length;
 
-        for(var i = 1; i <= filteredlist.length; i++){
-            document.getElementById(i+"i").src = filteredlist[i-1][8];
-            document.getElementById(i+"t").innerHTML = filteredlist[i-1][1];
-            document.getElementById(i+"temp").id = filteredlist[i-1][0];
-            document.getElementById(i+"cal").innerHTML = filteredlist[i-1][4] + " Calories";
-            document.getElementById(i+"pro").innerHTML = filteredlist[i-1][5] + "g Protein";
-            document.getElementById(i+"car").innerHTML = filteredlist[i-1][6] + "g Carbs";
-            document.getElementById(i+"fat").innerHTML = filteredlist[i-1][7] + "g Fat";
+        filteredlist = shuffle(filteredlist);
+
+        for (var i = 1; i <= filteredlist.length; i++) {
+            document.getElementById(i + "i").src = filteredlist[i - 1][8];
+            document.getElementById(i + "t").innerHTML = filteredlist[i - 1][1];
+            document.getElementById(i + "temp").id = filteredlist[i - 1][0];
+            document.getElementById(i + "cal").innerHTML = filteredlist[i - 1][4] + " Calories";
+            document.getElementById(i + "pro").innerHTML = filteredlist[i - 1][5] + "g Protein";
+            document.getElementById(i + "car").innerHTML = filteredlist[i - 1][6] + "g Carbs";
+            document.getElementById(i + "fat").innerHTML = filteredlist[i - 1][7] + "g Fat";
         }
-        
+
 
     })
+
+
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
 
 
 let recipeCards = document.querySelectorAll(".reciperecentlyaddedslide");

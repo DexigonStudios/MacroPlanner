@@ -44,12 +44,14 @@
 //     })
 
 
-fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNGQMOT8xvXCzScRtYXEhzVA9IhU7LN6ErozdCw/exec')
+fetch('https://script.google.com/macros/s/AKfycbzRkAKnLE7q4MWaSkVdIJM8p-4Kw4TB_GBDdskS2JcbWmWjJYnW8qKUjKcGmrazcw/exec')
     .then(res => res.json())
     .then(data => {
         let temp = [];
 
         Object.values(data).forEach(val => temp.push(val));
+
+        console.log(temp);
 
 
         for(let i = 1; i<=8; i++){

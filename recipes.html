@@ -45,7 +45,7 @@
                             <input class ="calorieinputbox" id="calorieinput" input type="number">
                             <li class="recipesearchinputtext">Allergies</li>
                         </div> -->
-                        <div id="test" style="display: none">
+                        <div id="advancedinputdiv" style="display: none">
                             <div class="caloriesinputdiv">
                                 <input class ="calorieinputbox" id="proteininput" input type="number">
                                 <li class="recipesearchinputtext">Protein (grams)</li>
@@ -713,16 +713,16 @@
     </body>
     <script>
         const showhideadvanced = document.querySelector("#showhideadvanced");
-        const test = document.querySelector("#test");
+        const advancedinputdiv = document.querySelector("#advancedinputdiv");
 
         showhideadvanced.addEventListener("click", function(){
-            if(test.style.display != "block"){
+            if(advancedinputdiv.style.display != "block"){
                 document.getElementById("showhideadvanced").innerHTML = "Hide Advanced Options";
-                test.style.display = "block";
+                advancedinputdiv.style.display = "block";
             }
             else{
                 document.getElementById("showhideadvanced").innerHTML = "Show Advanced Options";
-                test.style.display = "none";
+                advancedinputdiv.style.display = "none";
             }
         })
     </script>
