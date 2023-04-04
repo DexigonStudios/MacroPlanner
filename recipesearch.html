@@ -1,151 +1,256 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>MacroPlanner</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./styles.css">
-    </head>
-    <body>
-        <header class="topheader">
-            <nav>
-                <ui>
-                    <li class="logo"><a href="index.html">Logo</a></li>
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ui>
-            </nav>
-        </header>
-        <header class="recipesheader">
-            <div>
-                <h1 class="RecipePageTitle">
-                    Recipes
-                </h1>
-            </div>
-        </header>
-        <section>
-            <div>
-                <p class="resultsfoundtext" id ="resultsfoundtext"></p>
-                <div class="reciperecentlyaddedslide" id="1temp">
-                    <div class="recipeslidecard">
-                        <div class="recipeslidecardfront">
-                            <img id="1i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+
+<head>
+    <title>MacroPlanner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header class="navHeader scrolledSticky" id="navHeader">
+        <nav>
+            <ul>
+                <li class="navHeaderLogo">
+                    <div onclick="location.href='index.html';" style="cursor: pointer;">
+                        <img src="images/placeholderlogo.png">
+                        <h1>MacroPlanner</h1>
+                    </div>
+                </li>
+                <li class=" navHeaderSpacer">
+                </li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="recipeSearchResultNumSection">
+        <p>Results( )</p>
+    </section>
+    <section class="recipeSearchSection">
+        <div class="recipesHeaderSearchDiv">
+            <div class="recipesHeaderSearchDivTop">
+                <h1 class="recipesHeaderSearchTitle">Find a New Recipe</h1>
+                <h1 class="recipesHeaderSearchTitle2"><a href="contact.html">Not sure what to input?</a></h1>
+                <div class="recipesHeaderSearchBox">
+                    <h1>Calories</h1>
+                    <div class="sliderInput">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="sliderRangeInput">
+                        <input type="range" class="minRangeInput" min="0" max="1000" value="0" step="10">
+                        <input type="range" class="maxRangeInput" min="0" max="1000" value="1000" step="10">
+                    </div>
+                    <div class="recipesHeaderSearchBoxInputDiv">
+                        <div>
+                            <h1>min calories</h1>
+                            <input type="number" class="minInput" value="0" id="calorieMin">
                         </div>
-                        <div class="recipeslidecardback">
-                            <div>
-                                <p id="1t" class="recipeslidecardtitle"></p>
-                                <p class="recipeslidecardinfo">
-                                    <span id="1cal"></span><br>
-                                    <span id="1pro"></span><br>
-                                    <span id="1car"></span><br>
-                                    <span id="1fat"></span><br>
-                                </p>
-                            </div>
+                        <h1>~</h1>
+                        <div>
+                            <h1>max calories</h1>
+                            <input type="number" class="maxInput" value="1000" id="calorieMax">
                         </div>
                     </div>
                 </div>
-                <div class="reciperecentlyaddedslide" id="2temp">
-                    <div class="recipeslidecard">
-                        <div class="recipeslidecardfront">
-                            <img id="2i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+                <div class="recipesHeaderSearchBox">
+                    <h1>Protein</h1>
+                    <div class="sliderInput two">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="sliderRangeInput two">
+                        <input type="range" class="minRangeInput" min="0" max="500" value="0" step="5">
+                        <input type="range" class="maxRangeInput" min="0" max="500" value="500" step="5">
+                    </div>
+                    <div class="recipesHeaderSearchBoxInputDiv two">
+                        <div>
+                            <h1>min protein</h1>
+                            <input type="number" class="minInput" value="0" id="proteinMin">
                         </div>
-                        <div class="recipeslidecardback">
-                            <div>
-                                <p id="2t" class="recipeslidecardtitle"></p>
-                                <p class="recipeslidecardinfo">
-                                    <span id="2cal"></span><br>
-                                    <span id="2pro"></span><br>
-                                    <span id="2car"></span><br>
-                                    <span id="2fat"></span><br>
-                                </p>
-                            </div>
+                        <h1>~</h1>
+                        <div>
+                            <h1>max protein</h1>
+                            <input type="number" class="maxInput" value="500" id="proteinMax">
                         </div>
                     </div>
                 </div>
-                <div class="reciperecentlyaddedslide" id="3temp">
-                    <div class="recipeslidecard">
-                        <div class="recipeslidecardfront">
-                            <img id="3i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+                <div class="recipesHeaderSearchBox">
+                    <h1>Carbs</h1>
+                    <div class="sliderInput three">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="sliderRangeInput three">
+                        <input type="range" class="minRangeInput" min="0" max="200" value="0" step="5">
+                        <input type="range" class="maxRangeInput" min="0" max="200" value="200" step="5">
+                    </div>
+                    <div class="recipesHeaderSearchBoxInputDiv three">
+                        <div>
+                            <h1>min carbs</h1>
+                            <input type="number" class="minInput" value="0" id="carbsMin">
                         </div>
-                        <div class="recipeslidecardback">
-                            <div>
-                                <p id="3t" class="recipeslidecardtitle"></p>
-                                <p class="recipeslidecardinfo">
-                                    <span id="3cal"></span><br>
-                                    <span id="3pro"></span><br>
-                                    <span id="3car"></span><br>
-                                    <span id="3fat"></span><br>
-                                </p>
-                            </div>
+                        <h1>~</h1>
+                        <div>
+                            <h1>max carbs</h1>
+                            <input type="number" class="maxInput" value="200" id="carbsMax">
                         </div>
                     </div>
                 </div>
-                <div class="reciperecentlyaddedslide" id="4temp">
-                    <div class="recipeslidecard">
-                        <div class="recipeslidecardfront">
-                            <img id="4i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
-                        </div>
-                        <div class="recipeslidecardback">
-                            <div>
-                                <p id="4t" class="recipeslidecardtitle"></p>
-                                <p class="recipeslidecardinfo">
-                                    <span id="4cal"></span><br>
-                                    <span id="4pro"></span><br>
-                                    <span id="4car"></span><br>
-                                    <span id="4fat"></span><br>
-                                </p>
-                            </div>
-                        </div>
+                <div class="recipesHeaderSearchBox">
+                    <h1>Fat</h1>
+                    <div class="sliderInput four">
+                        <div class="progress"></div>
                     </div>
-                </div>
-                <div class="reciperecentlyaddedslide" id="5temp">
-                    <div class="recipeslidecard">
-                        <div class="recipeslidecardfront">
-                            <img id="5i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
-                        </div>
-                        <div class="recipeslidecardback">
-                            <div>
-                                <p id="5t" class="recipeslidecardtitle"></p>
-                                <p class="recipeslidecardinfo">
-                                    <span id="5cal"></span><br>
-                                    <span id="5pro"></span><br>
-                                    <span id="5car"></span><br>
-                                    <span id="5fat"></span><br>
-                                </p>
-                            </div>
-                        </div>
+                    <div class="sliderRangeInput four">
+                        <input type="range" class="minRangeInput" min="0" max="200" value="0" step="5">
+                        <input type="range" class="maxRangeInput" min="0" max="200" value="200" step="5">
                     </div>
-                </div>
-                <div class="reciperecentlyaddedslide" id="6temp">
-                    <div class="recipeslidecard">
-                        <div class="recipeslidecardfront">
-                            <img id="6i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+                    <div class="recipesHeaderSearchBoxInputDiv four">
+                        <div>
+                            <h1>min fat</h1>
+                            <input type="number" class="minInput" value="0" id="fatMin">
                         </div>
-                        <div class="recipeslidecardback">
-                            <div>
-                                <p id="6t" class="recipeslidecardtitle"></p>
-                                <p class="recipeslidecardinfo">
-                                    <span id="6cal"></span><br>
-                                    <span id="6pro"></span><br>
-                                    <span id="6car"></span><br>
-                                    <span id="6fat"></span><br>
-                                </p>
-                            </div>
+                        <h1>~</h1>
+                        <div>
+                            <h1>max fat</h1>
+                            <input type="number" class="maxInput" value="200" id="fatMax">
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <section>
-            <div class="emptybox"></div>
-            <div class="emptybox"></div>
-        </section>
-        <footer>
-            123 Main Street • 555-555-5555 • support@us.com
-        </footer>
-    </body>
-    <script src="./findrecipe.js"></script>
+            <div class="recipesHeaderSearchDivBottom">
+                <button type="button" class="recipeHeaderSearchButton"
+                    onclick="searchrecipe()">Search</button>
+            </div>
+        </div>
+        <div class="recipeSearchResultDiv">
+
+        </div>
+    </section>
+    <!-- <section>
+        <div>
+            <p class="resultsfoundtext" id="resultsfoundtext"></p>
+            <div class="reciperecentlyaddedslide" id="1temp">
+                <div class="recipeslidecard">
+                    <div class="recipeslidecardfront">
+                        <img id="1i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+                    </div>
+                    <div class="recipeslidecardback">
+                        <div>
+                            <p id="1t" class="recipeslidecardtitle"></p>
+                            <p class="recipeslidecardinfo">
+                                <span id="1cal"></span><br>
+                                <span id="1pro"></span><br>
+                                <span id="1car"></span><br>
+                                <span id="1fat"></span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reciperecentlyaddedslide" id="2temp">
+                <div class="recipeslidecard">
+                    <div class="recipeslidecardfront">
+                        <img id="2i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+                    </div>
+                    <div class="recipeslidecardback">
+                        <div>
+                            <p id="2t" class="recipeslidecardtitle"></p>
+                            <p class="recipeslidecardinfo">
+                                <span id="2cal"></span><br>
+                                <span id="2pro"></span><br>
+                                <span id="2car"></span><br>
+                                <span id="2fat"></span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reciperecentlyaddedslide" id="3temp">
+                <div class="recipeslidecard">
+                    <div class="recipeslidecardfront">
+                        <img id="3i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+                    </div>
+                    <div class="recipeslidecardback">
+                        <div>
+                            <p id="3t" class="recipeslidecardtitle"></p>
+                            <p class="recipeslidecardinfo">
+                                <span id="3cal"></span><br>
+                                <span id="3pro"></span><br>
+                                <span id="3car"></span><br>
+                                <span id="3fat"></span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reciperecentlyaddedslide" id="4temp">
+                <div class="recipeslidecard">
+                    <div class="recipeslidecardfront">
+                        <img id="4i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+                    </div>
+                    <div class="recipeslidecardback">
+                        <div>
+                            <p id="4t" class="recipeslidecardtitle"></p>
+                            <p class="recipeslidecardinfo">
+                                <span id="4cal"></span><br>
+                                <span id="4pro"></span><br>
+                                <span id="4car"></span><br>
+                                <span id="4fat"></span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reciperecentlyaddedslide" id="5temp">
+                <div class="recipeslidecard">
+                    <div class="recipeslidecardfront">
+                        <img id="5i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+                    </div>
+                    <div class="recipeslidecardback">
+                        <div>
+                            <p id="5t" class="recipeslidecardtitle"></p>
+                            <p class="recipeslidecardinfo">
+                                <span id="5cal"></span><br>
+                                <span id="5pro"></span><br>
+                                <span id="5car"></span><br>
+                                <span id="5fat"></span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reciperecentlyaddedslide" id="6temp">
+                <div class="recipeslidecard">
+                    <div class="recipeslidecardfront">
+                        <img id="6i" class="recipesslideimage" src="images/gray.jpg" alt="apple1">
+                    </div>
+                    <div class="recipeslidecardback">
+                        <div>
+                            <p id="6t" class="recipeslidecardtitle"></p>
+                            <p class="recipeslidecardinfo">
+                                <span id="6cal"></span><br>
+                                <span id="6pro"></span><br>
+                                <span id="6car"></span><br>
+                                <span id="6fat"></span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section> -->
+    <section>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+    </section>
+    <footer>
+        123 Main Street • 555-555-5555 • support@us.com
+    </footer>
+</body>
+<script src="./searchSlider.js"></script>
+<script src="./findrecipe.js"></script>
+
 </html>

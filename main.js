@@ -51,13 +51,12 @@ fetch('https://script.google.com/macros/s/AKfycbzRkAKnLE7q4MWaSkVdIJM8p-4Kw4TB_G
 
         Object.values(data).forEach(val => temp.push(val));
 
-        console.log(temp);
-
-
         for(let i = 1; i<=8; i++){
+            document.getElementById(i+"link").id = temp[0][i][0];
+            document.getElementById(i+"link2").id = temp[0][i][0];
             document.getElementById(i+"i").src = temp[0][i][8];
-            document.getElementById(i+"t").innerHTML = temp[0][i][1];
             document.getElementById(i+"i2").src = temp[0][i][8];
+            document.getElementById(i+"t").innerHTML = temp[0][i][1];
             document.getElementById(i+"t2").innerHTML = temp[0][i][1];
             document.getElementById(i+"cal").innerHTML = temp[0][i][4] + " Calories";
             document.getElementById(i+"pro").innerHTML = temp[0][i][5] + "g Protein";
@@ -68,6 +67,23 @@ fetch('https://script.google.com/macros/s/AKfycbzRkAKnLE7q4MWaSkVdIJM8p-4Kw4TB_G
             document.getElementById(i+"car2").innerHTML = temp[0][i][6] + "g Carbs";
             document.getElementById(i+"fat2").innerHTML = temp[0][i][7] + "g Fat";
         }
+
+        for(let i = 1; i<=8; i++){
+            document.getElementById(i+"link3").id = temp[0][i+10][0];
+            document.getElementById(i+"link4").id = temp[0][i+10][0];
+            document.getElementById(i+"i3").src = temp[0][i+10][8];
+            document.getElementById(i+"i4").src = temp[0][i+10][8];
+            document.getElementById(i+"t3").innerHTML = temp[0][i+10][1];
+            document.getElementById(i+"t4").innerHTML = temp[0][i+10][1];
+            document.getElementById(i+"cal3").innerHTML = temp[0][i+10][4] + " Calories";
+            document.getElementById(i+"pro3").innerHTML = temp[0][i+10][5] + "g Protein";
+            document.getElementById(i+"car3").innerHTML = temp[0][i+10][6] + "g Carbs";
+            document.getElementById(i+"fat3").innerHTML = temp[0][i+10][7] + "g Fat";
+            document.getElementById(i+"cal4").innerHTML = temp[0][i+10][4] + " Calories";
+            document.getElementById(i+"pro4").innerHTML = temp[0][i+10][5] + "g Protein";
+            document.getElementById(i+"car4").innerHTML = temp[0][i+10][6] + "g Carbs";
+            document.getElementById(i+"fat4").innerHTML = temp[0][i+10][7] + "g Fat";
+        }
     })
 
 
@@ -75,7 +91,7 @@ function openRecipe(btn) {
     alert(btn.id);
 }
 
-let recipeCards = document.querySelectorAll(".reciperecentlyaddedslide");
+let recipeCards = document.querySelectorAll(".recipeSmallCardContainer");
 for (let i = 0; i < recipeCards.length; i++) {
     recipeCards[i].addEventListener("click", function () {
         sessionStorage.setItem("recipe", this.id);
@@ -85,27 +101,15 @@ for (let i = 0; i < recipeCards.length; i++) {
 }
 
 function searchrecipe() {
-    // alert(document.getElementById("calorieinput").value.length == 0);
-    var calorie = document.getElementById("calorieinput").value;
-    var protein = document.getElementById("proteininput").value;
-    var carbs = document.getElementById("carbsinput").value;
-    var fat = document.getElementById("fatinput").value;
-    if(calorie.length == 0 && protein.length == 0 && carbs.length == 0 && fat.length == 0){
-        alert("Invalid. Input is required to search");
-    } else {
-        if(calorie.length == 0){
-            calorie = "null";
-        }
-        if(protein.length == 0){
-            protein = "null";
-        }
-        if(carbs.length == 0){
-            carbs = "null";
-        }
-        if(fat.length == 0){
-            fat = "null";
-        }
-    
-        location.href = "recipesearch.html?calorie=" + calorie + "&protein=" + protein + "&carbs=" + carbs + "&fat=" + fat;
-    }
+    var calorieMin = Math.max(document.getElementById("calorieMin").value, 0);
+    var calorieMax = Math.min(document.getElementById("calorieMax").value, 1000);
+    var proteinMin = Math.max(document.getElementById("proteinMin").value, 0);
+    var proteinMax = Math.min(document.getElementById("proteinMax").value, 500);
+    var carbsMin = Math.max(document.getElementById("carbsMin").value, 0);
+    var carbsMax = Math.min(document.getElementById("carbsMax").value, 200);
+    var fatMin = Math.max(document.getElementById("fatMin").value, 0);
+    var fatMax = Math.min(document.getElementById("fatMax").value, 200);
+
+
+    location.href = "recipesearch.html?calMin=" + calorieMin + "&calMax=" + calorieMax + "&proMin=" + proteinMin + "&proMax=" + proteinMax + "&carMin=" + carbsMin + "&carMax=" + carbsMax + "&fatMin=" + fatMin + "&fatMax=" + fatMax;
 }

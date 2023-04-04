@@ -1,80 +1,421 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>MacroPlanner</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./styles.css">
-    </head>
-    <body>
-        <header class="topheader">
-            <nav>
-                <ui>
-                    <li class="logo"><a href="index.html">Logo</a></li>
-                    <li><a href="recipes.html">Recipes</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ui>
-            </nav>
-        </header>
-        <header class="homeheader">
-            <div>
-                <h1 class="HomeWebName">
-                    MacroPlanner
+
+<head>
+    <title>MacroPlanner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header class="navHeader" id="navHeader">
+        <nav>
+            <ul>
+                <li class="navHeaderLogo">
+                    <div onclick="location.href='index.html';" style="cursor: pointer;">
+                        <img src="images/placeholderlogo.png">
+                        <h1>MacroPlanner</h1>
+                    </div>
+                </li>
+                <li class=" navHeaderSpacer">
+                </li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header class="homeHeader">
+        <div>
+            <h1 class="homeHeaderTitle">
+                MacroPlanner
+            </h1>
+            <h1 class="homeHeaderSlogan">
+                Find Recipes Made For
+                <span style="color:rgb(229, 255, 0);">You</span>
+            </h1>
+            <button type="button" class="homeHeaderRecipeButton" onclick="location.href='recipes.html';">Find
+                Recipes</button>
+        </div>
+    </header>
+    <section class="homeFeatureBoxSection">
+        <div class="homeFeatureBoxDiv">
+            <div class="homeFeatureBoxText">
+                <h1 class="homeFeatureBoxTitle">
+                    Find Tailored Recipes
                 </h1>
-                <hr class="rounded">
-                <h1 class="HomeSlogan">
-                    Find Recipes Made For 
-                    <span style="color:rgb(229, 255, 0);">You</span>
+                <h1 class="homeFeatureBoxPara">
+                    Whether you're looking to maintain a healthy diet or manage a medical condition, our platform offers
+                    personalized recipe suggestions that match your specific nutrient and calorie needs, making meal
+                    planning a breeze.
                 </h1>
-                <button type="button" class="HomeRecipeButton" onclick="location.href='recipes.html';">Find Recipes</button>
             </div>
-        </header>
-        <section>
-        </section>
-        <section class="feature-box home">
-            <div class="homefeatureboxdiv">
-                <div class="homefeaturehor">
-                    <h1 class="homefeaturetitle">
-                        Find Tailored Recipes
-                    </h1>
-                    <h1 class="homefeaturepara">
-                        Discover a new way to find recipes that suit your dietary preferences with our advanced search engine. Whether you're looking to maintain a healthy diet or manage a medical condition, our platform offers personalized recipe suggestions that match your specific nutrient and calorie needs, making meal planning a breeze. 
-                    </h1>
+            <img class="homeFeatureBoxImg1" src="images/photo-1542010589005-d1eacc3918f2.jpeg">
+        </div>
+        <div class="homeFeatureBoxDiv">
+            <img class="homeFeatureBoxImg2" src="images/iStock_58717870_XLARGE.jpg">
+            <div class="homeFeatureBoxText">
+                <h1 class="homeFeatureBoxTitle">
+                    Discover New Food
+                </h1>
+                <h1 class="homeFeatureBoxPara">
+                    Our website features a wide selection of quality foods for you to discover. With a variety of
+                    ingredients, recipes, and cuisines available, you're sure to find something that will satisfy your
+                    cravings.
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="homeRecipeScrollerSection">
+        <h1>Choose From Over 100 Recipes</h1>
+        <div class="homeRecipeScroller">
+            <div class="homeRecipeScrollerTrack">
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/placeholder.png">
                 </div>
-                <img class="homefeatureimg1" src="images/photo-1542010589005-d1eacc3918f2.jpeg">
-            </div>
-            <div class="homefeatureboxdiv">
-                <img class="homefeatureimg2" src="images/iStock_58717870_XLARGE.jpg" alt="apple1">
-                <div class="homefeaturehor">
-                    <h1 class="homefeaturetitle">
-                        Discover New Food
-                    </h1>
-                    <h1 class="homefeaturepara">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </h1>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+
+                <!-- Slides doubled for infinite effect -->
+
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/placeholder.png">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
                 </div>
             </div>
-            <div class="homefeatureboxdiv">
-                <div class="homefeaturehor">
-                    <h1 class="homefeaturetitle">
-                        Title 3
-                    </h1>
-                    <h1 class="homefeaturepara">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </h1>
+            <div class="homeRecipeScrollerTrack">
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
                 </div>
-                <img class="homefeatureimg1" src="images/istockphoto-1314948471-612x612.jpg" alt="apple1">
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+
+                <!-- Slides doubled for infinite effect -->
+
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide two">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
             </div>
-        </section>
-        <section>
-            <div class="emptybox"></div>
-        </section>
-        <footer>
-            123 Main Street • 555-555-5555 • example@us.com
-        </footer>
-        <script src="./main.js"></script>
-    </body>
+            <div class="homeRecipeScrollerTrack">
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+
+                <!-- Slides doubled for infinite effect -->
+
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide three">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+            </div>
+            <div class="homeRecipeScrollerTrack">
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+
+                <!-- Slides doubled for infinite effect -->
+
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide four">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+            </div>
+            <div class="homeRecipeScrollerTrack">
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+
+                <!-- Slides doubled for infinite effect -->
+
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+                <div class="homeRecipeScrollerSlide five">
+                    <img src="images/iStock_58717870_XLARGE.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="emptybox"></div>
+    </section>
+    <footer>
+        123 Main Street • 555-555-5555 • example@us.com
+    </footer>
+    <script>
+        document.addEventListener('scroll', () => {
+            const navHeader = document.querySelector('.navHeader');
+            if (window.scrollY > 0) {
+                navHeader.classList.add('scrolled');
+            } else {
+                navHeader.classList.remove('scrolled');
+            }
+        })
+    </script>
+    <script src="./main.js"></script>
+</body>
+
 </html>
