@@ -28,67 +28,170 @@
             </ul>
         </nav>
     </header>
-    <section>
-        <div class="recipepagetop">
-            <div class="recipepageinfo">
-                <p class="recipename" id="recipename"></p>
-                <div class="recipepageinfoinner">
-                    <table class="recipepageinfoinnertable1">
-                        <tr id="recipeservingtitle" style="font-weight: 600;"></tr>
-                        <tr id="recipeserving"></tr>
-                        <tr id="recipetimetitle" style="font-weight: 600;"></tr>
-                        <tr id="recipetime"></tr>
-                    </table>
-                    <div class="recipeinfodividerdiv">
-                        <div class="recipeinfodivider"></div>
+    <section id="recipePageSection" style="display: none;">
+        <div class="recipePageHeader">
+            <div class="recipePageHeaderText" id="recipePageHeaderText">
+                <p class="recipePageHeaderRecipe" id="recipename"></p>
+                <div class="recipePageHeaderInfo">
+                    <div class="recipePageHeaderInfoDiv">
+                        <p id="recipeserving"></p>
+                        <p id="recipetime"></p>
                     </div>
-                    <table class="recipepageinfoinnertable2">
-                        <tr id="recipecalorie"></tr>
-                        <tr id="recipeprotein"></tr>
-                        <tr id="recipecarb"></tr>
-                        <tr id="recipefat"></tr>
-                    </table>
+                    <div class="recipePageHeaderInfoDivider"></div>
+                    <div class="recipePageHeaderInfoDiv">
+                        <p id="recipecalorie"></p>
+                        <p id="recipeprotein"></p>
+                        <p id="recipecarb"></p>
+                        <p id="recipefat"></p>
+                    </div>
                 </div>
             </div>
-            <div class="recipepageimage">
-                <img id="imagetest" class="currentrecipeimage"></img>
+            <img id="imagetest" class="recipePageHeaderImg"></img>
+        </div>
+        <div class="recipePageMain">
+            <div class="recipePageMainLeft"> 
+                <div class="ingredientstepinfo">
+                    <div>
+                        <p class="ingredientinfoheader1" id="ingredientmaintitle"></p>
+                        <p class="ingredientstepinfoheader2" id="ingredientstitle0"></p>
+                        <table class="ingredientinfotext" id="ingredients0"></table>
+                        <p class="ingredientstepinfoheader2" id="ingredientstitle1"></p>
+                        <table class="ingredientinfotext" id="ingredients1"></table>
+                        <p class="ingredientstepinfoheader2" id="ingredientstitle2"></p>
+                        <table class="ingredientinfotext" id="ingredients2"></table>
+                        <p class="ingredientstepinfoheader2" id="ingredientstitle3"></p>
+                        <table class="ingredientinfotext" id="ingredients3"></table>
+                        <p class="ingredientstepinfoheader2" id="ingredientstitle4"></p>
+                        <table class="ingredientinfotext" id="ingredients4"></table>
+                        <p class="ingredientstepinfoheader2" id="ingredientstitle5"></p>
+                        <table class="ingredientinfotext" id="ingredients5"></table>
+                    </div>
+                    <!-- <div class="ingredientstepdivider"></div> -->
+                    <div class="stepinfodiv">
+                        <p class="ingredientstepinfoheader1" id="stepmaintitle"></p>
+                        <p class="ingredientstepinfoheader2" id="stepstitle0"></p>
+                        <table class="stepinfotext" id="steps0"></table>
+                        <p class="ingredientstepinfoheader2" id="stepstitle1"></p>
+                        <table class="stepinfotext" id="steps1"></table>
+                        <p class="ingredientstepinfoheader2" id="stepstitle2"></p>
+                        <table class="stepinfotext" id="steps2"></table>
+                        <p class="ingredientstepinfoheader2" id="stepstitle3"></p>
+                        <table class="stepinfotext" id="steps3"></table>
+                        <p class="ingredientstepinfoheader2" id="stepstitle4"></p>
+                        <table class="stepinfotext" id="steps4"></table>
+                        <p class="ingredientstepinfoheader2" id="stepstitle5"></p>
+                        <table class="stepinfotext" id="steps5"></table>
+                    </div>
+                </div>
+            </div>
+            <div class="recipePageMainRight" id="recipePageMainRight"> 
+                <p class="recipePageSideBarTitle">Also Try</p>
+                <div class="recipePageSideBarDivider"></div>
+                <div class="recipePageSideBarBox">
+                    <div class="recipeWideCardContainer" id="1w">
+                        <img class="recipeWideCardContainerImg" id="1recipeWideCardContainerImg" src="images/gray.jpg">
+                        <div class="recipeWideCardContainerText">
+                        <p class="recipeWideCardContainerRecipe" id="1recipeWideCardContainerRecipe"></p>
+                        <p class="recipeWideCardContainerInfo">
+                            <span id="1calw"></span>
+                            <span id="1prow"></span>
+                            <span id="1carw"></span>
+                            <span id="1fatw"></span>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="recipeWideCardContainer" id="2w">
+                        <img class="recipeWideCardContainerImg" id="2recipeWideCardContainerImg" src="images/gray.jpg">
+                        <div class="recipeWideCardContainerText">
+                        <p class="recipeWideCardContainerRecipe" id="2recipeWideCardContainerRecipe"></p>
+                        <p class="recipeWideCardContainerInfo">
+                            <span id="2calw"></span>
+                            <span id="2prow"></span>
+                            <span id="2carw"></span>
+                            <span id="2fatw"></span>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="recipeWideCardContainer" id="3w">
+                        <img class="recipeWideCardContainerImg" id="3recipeWideCardContainerImg" src="images/gray.jpg">
+                        <div class="recipeWideCardContainerText">
+                        <p class="recipeWideCardContainerRecipe" id="3recipeWideCardContainerRecipe"></p>
+                        <p class="recipeWideCardContainerInfo">
+                            <span id="3calw"></span>
+                            <span id="3prow"></span>
+                            <span id="3carw"></span>
+                            <span id="3fatw"></span>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="recipeWideCardContainer" id="4w">
+                        <img class="recipeWideCardContainerImg" id="4recipeWideCardContainerImg" src="images/gray.jpg">
+                        <div class="recipeWideCardContainerText">
+                        <p class="recipeWideCardContainerRecipe" id="4recipeWideCardContainerRecipe"></p>
+                        <p class="recipeWideCardContainerInfo">
+                            <span id="4calw"></span>
+                            <span id="4prow"></span>
+                            <span id="4carw"></span>
+                            <span id="4fatw"></span>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="recipeWideCardContainer" id="5w">
+                        <img class="recipeWideCardContainerImg" id="5recipeWideCardContainerImg" src="images/gray.jpg">
+                        <div class="recipeWideCardContainerText">
+                        <p class="recipeWideCardContainerRecipe" id="5recipeWideCardContainerRecipe"></p>
+                        <p class="recipeWideCardContainerInfo">
+                            <span id="5calw"></span>
+                            <span id="5prow"></span>
+                            <span id="5carw"></span>
+                            <span id="5fatw"></span>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="recipeWideCardContainer" id="6w">
+                        <img class="recipeWideCardContainerImg" id="6recipeWideCardContainerImg" src="images/gray.jpg">
+                        <div class="recipeWideCardContainerText">
+                        <p class="recipeWideCardContainerRecipe" id="6recipeWideCardContainerRecipe"></p>
+                        <p class="recipeWideCardContainerInfo">
+                            <span id="6calw"></span>
+                            <span id="6prow"></span>
+                            <span id="6carw"></span>
+                            <span id="6fatw"></span>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="recipeWideCardContainer" id="7w">
+                        <img class="recipeWideCardContainerImg" id="7recipeWideCardContainerImg" src="images/gray.jpg">
+                        <div class="recipeWideCardContainerText">
+                        <p class="recipeWideCardContainerRecipe" id="7recipeWideCardContainerRecipe"></p>
+                        <p class="recipeWideCardContainerInfo">
+                            <span id="7calw"></span>
+                            <span id="7prow"></span>
+                            <span id="7carw"></span>
+                            <span id="7fatw"></span>
+                        </p>
+                        </div>
+                    </div>
+                    <div class="recipeWideCardContainer" id="8w">
+                        <img class="recipeWideCardContainerImg" id="8recipeWideCardContainerImg" src="images/gray.jpg">
+                        <div class="recipeWideCardContainerText">
+                        <p class="recipeWideCardContainerRecipe" id="8recipeWideCardContainerRecipe"></p>
+                        <p class="recipeWideCardContainerInfo">
+                            <span id="8calw"></span>
+                            <span id="8prow"></span>
+                            <span id="8carw"></span>
+                            <span id="8fatw"></span>
+                        </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="recipepagemain">
-            <div class="ingredientstepinfo">
-                <div>
-                    <p class="ingredientinfoheader1" id="ingredientmaintitle"></p>
-                    <p class="ingredientstepinfoheader2" id="ingredientstitle0"></p>
-                    <table class="ingredientinfotext" id="ingredients0"></table>
-                    <p class="ingredientstepinfoheader2" id="ingredientstitle1"></p>
-                    <table class="ingredientinfotext" id="ingredients1"></table>
-                    <p class="ingredientstepinfoheader2" id="ingredientstitle2"></p>
-                    <table class="ingredientinfotext" id="ingredients2"></table>
-                    <p class="ingredientstepinfoheader2" id="ingredientstitle3"></p>
-                    <table class="ingredientinfotext" id="ingredients3"></table>
-                    <p class="ingredientstepinfoheader2" id="ingredientstitle4"></p>
-                    <table class="ingredientinfotext" id="ingredients4"></table>
-                    <p class="ingredientstepinfoheader2" id="ingredientstitle5"></p>
-                    <table class="ingredientinfotext" id="ingredients5"></table>
-                </div>
-                <div class="ingredientstepdivider"></div>
-                <div class="stepinfodiv">
-                    <p class="ingredientstepinfoheader1" id="stepmaintitle"></p>
-                    <p class="ingredientstepinfoheader2" id="stepstitle0"></p>
-                    <table class="stepinfotext" id="steps0"></table>
-                    <p class="ingredientstepinfoheader2" id="stepstitle1"></p>
-                    <table class="stepinfotext" id="steps1"></table>
-                    <p class="ingredientstepinfoheader2" id="stepstitle2"></p>
-                    <table class="stepinfotext" id="steps2"></table>
-                    <p class="ingredientstepinfoheader2" id="stepstitle3"></p>
-                    <table class="stepinfotext" id="steps3"></table>
-                    <p class="ingredientstepinfoheader2" id="stepstitle4"></p>
-                    <table class="stepinfotext" id="steps4"></table>
-                    <p class="ingredientstepinfoheader2" id="stepstitle5"></p>
-                    <table class="stepinfotext" id="steps5"></table>
-                </div>
-            </div>
-        </div>
+    </section>
+    <section id="recipePageEmptySection" style="display: block;">
+        <div class="longeremptybox"></div>
+        <div class="longeremptybox"></div>
+        <div class="longeremptybox"></div>
     </section>
     <footer>
         123 Main Street • 555-555-5555 • example@us.com

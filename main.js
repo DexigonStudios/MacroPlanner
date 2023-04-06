@@ -102,9 +102,9 @@ for (let i = 0; i < recipeCards.length; i++) {
 
 function searchrecipe() {
     var calorieMin = Math.max(document.getElementById("calorieMin").value, 0);
-    var calorieMax = Math.min(document.getElementById("calorieMax").value, 1000);
+    var calorieMax = Math.min(document.getElementById("calorieMax").value, 2000);
     var proteinMin = Math.max(document.getElementById("proteinMin").value, 0);
-    var proteinMax = Math.min(document.getElementById("proteinMax").value, 500);
+    var proteinMax = Math.min(document.getElementById("proteinMax").value, 200);
     var carbsMin = Math.max(document.getElementById("carbsMin").value, 0);
     var carbsMax = Math.min(document.getElementById("carbsMax").value, 200);
     var fatMin = Math.max(document.getElementById("fatMin").value, 0);

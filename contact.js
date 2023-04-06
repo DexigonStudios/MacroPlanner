@@ -22,6 +22,7 @@ contactSendButton.addEventListener('click', function (e) {
         var params = {
             name: document.getElementById("contactname").value,
             email: document.getElementById("contactemail").value,
+            subject: document.getElementById("contactsubject").value,
             message: document.getElementById("contactmessage").value,
         };
 
@@ -33,6 +34,7 @@ contactSendButton.addEventListener('click', function (e) {
             .then((res) => {
                 document.getElementById("contactname").value = "";
                 document.getElementById("contactemail").value = "";
+                document.getElementById("contactsubject").value = "";
                 document.getElementById("contactmessage").value = "";
                 console.log(res);
                 alert("Your message was sent successfully");

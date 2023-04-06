@@ -1,19 +1,15 @@
 window.addEventListener('load', () => {
 
     let parameters = new URLSearchParams(window.location.search);
-    // calorie = parameters.get("calorie");
-    // protein = parameters.get("protein");
-    // carbs = parameters.get("carbs");
-    // fat = parameters.get("fat");
 
-    var calorieMin = parameters.get("calMin");
-    var calorieMax = parameters.get("calMax");
-    var proteinMin = parameters.get("proMin");
-    var proteinMax = parameters.get("proMax");
-    var carbsMin = parameters.get("carMin");
-    var carbsMax = parameters.get("carMax");
-    var fatMin = parameters.get("fatMin");
-    var fatMax = parameters.get("fatMax");
+    calorieMin = parameters.get("calMin");
+    calorieMax = parameters.get("calMax");
+    proteinMin = parameters.get("proMin");
+    proteinMax = parameters.get("proMax");
+    carbsMin = parameters.get("carMin");
+    carbsMax = parameters.get("carMax");
+    fatMin = parameters.get("fatMin");
+    fatMax = parameters.get("fatMax");
 
     document.getElementById("calorieMin").value = calorieMin;
     document.getElementById("calorieMax").value = calorieMax;
@@ -38,35 +34,41 @@ fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNG
     .then(res => res.json())
     .then(data => {
         let recipelist = [];
+
         let filteredlist = [];
+        currentlyShowingSearchNum = 0;
+        totalfilteredlist = [];
+
         let searchrange = 0.2;
 
         Object.values(data).forEach(val => recipelist.push(val));
-        // filteredlist = recipelist[0];
 
-        // if (calorie != "null") {
-        //     filteredlist = filteredlist.filter((filteredlist) => {
-        //         return (filteredlist[4] >= calorie * (1 - searchrange) && filteredlist[4] <= calorie * (1 + searchrange));
-        //     })
-        // }
-        // if (protein != "null") {
-        //     filteredlist = filteredlist.filter((filteredlist) => {
-        //         return (filteredlist[5] >= protein * (1 - searchrange) && filteredlist[5] <= protein * (1 + searchrange));
-        //     })
-        // }
-        // if (carbs != "null") {
-        //     filteredlist = filteredlist.filter((filteredlist) => {
-        //         return (filteredlist[6] >= carbs * (1 - searchrange) && filteredlist[6] <= carbs * (1 + searchrange));
-        //     })
-        // }
-        // if (fat != "null") {
-        //     filteredlist = filteredlist.filter((filteredlist) => {
-        //         return (filteredlist[7] >= fat * (1 - searchrange) && filteredlist[7] <= fat * (1 + searchrange));
-        //     })
-        // }
+        filteredlist = recipelist[0];
+
+        filteredlist = filteredlist.filter((filteredlist) => {
+            return (parseInt(filteredlist[4]) >= calorieMin && parseInt(filteredlist[4]) <= calorieMax);
+        })
+        filteredlist = filteredlist.filter((filteredlist) => {
+            return (parseInt(filteredlist[5]) >= proteinMin && parseInt(filteredlist[5]) <= proteinMax);
+        })
+        filteredlist = filteredlist.filter((filteredlist) => {
+            return (parseInt(filteredlist[6]) >= carbsMin && parseInt(filteredlist[6]) <= carbsMax);
+        })
+        filteredlist = filteredlist.filter((filteredlist) => {
+            return (parseInt(filteredlist[7]) >= fatMin && parseInt(filteredlist[7]) <= fatMax);
+        })
+
+        totalfilteredlist = shuffle(filteredlist);
 
 
-        // document.getElementById("resultsfoundtext").innerHTML = "Results Found: " + filteredlist.length;
+        document.getElementById("resultsfoundtext").innerHTML = "Results (" + totalfilteredlist.length + ")";
+
+
+
+
+        document.getElementById("recipeSearchLoadMoreButton").style.display = "block";
+
+        loadSearchCards();
 
         // filteredlist = shuffle(filteredlist);
 
@@ -82,6 +84,109 @@ fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNG
 
 
     })
+
+
+
+function loadSearchCards() {
+    for (var i = 0; i < 6; i++) {
+        if (currentlyShowingSearchNum < totalfilteredlist.length) {
+            let recipeSearchCardContainer = document.createElement('div');
+            recipeSearchCardContainer.classList.add('recipeSearchCardContainer');
+            recipeSearchCardContainer.id = totalfilteredlist[currentlyShowingSearchNum][0];
+            document.getElementById("recipeSearchResultDivTop").append(recipeSearchCardContainer);
+
+            let recipeSearchCardBackImg = document.createElement('img');
+            recipeSearchCardBackImg.classList.add('recipeSearchCardBackImg');
+            recipeSearchCardBackImg.src = totalfilteredlist[currentlyShowingSearchNum][8];
+            recipeSearchCardContainer.append(recipeSearchCardBackImg);
+
+            let recipeSearchCard = document.createElement('div');
+            recipeSearchCard.classList.add('recipeSearchCard');
+            recipeSearchCardContainer.append(recipeSearchCard);
+
+            let recipeSearchCardImg = document.createElement('img');
+            recipeSearchCardImg.src = totalfilteredlist[currentlyShowingSearchNum][8];
+            recipeSearchCard.append(recipeSearchCardImg);
+
+            let recipeSearchCardText = document.createElement('div');
+            recipeSearchCardText.classList.add('recipeSearchCardText');
+            recipeSearchCard.append(recipeSearchCardText);
+
+            let recipeSearchCardRecipe = document.createElement('p');
+            recipeSearchCardRecipe.classList.add('recipeSearchCardRecipe');
+            recipeSearchCardRecipe.innerHTML = totalfilteredlist[currentlyShowingSearchNum][1];
+            recipeSearchCardText.append(recipeSearchCardRecipe);
+
+            let recipeSearchCardInfo = document.createElement('div');
+            recipeSearchCardInfo.classList.add('recipeSearchCardInfo');
+            recipeSearchCardText.append(recipeSearchCardInfo);
+
+            let recipeSearchCardInfoPart1 = document.createElement('div');
+            recipeSearchCardInfoPart1.classList.add('recipeSearchCardInfoPart');
+            recipeSearchCardInfo.append(recipeSearchCardInfoPart1);
+
+            let recipeSearchCardInfoPartp1 = document.createElement('p');
+            recipeSearchCardInfoPartp1.innerHTML = totalfilteredlist[currentlyShowingSearchNum][2] + " Servings";
+            recipeSearchCardInfoPart1.append(recipeSearchCardInfoPartp1);
+
+            let recipeSearchCardInfoPartp2 = document.createElement('p');
+            recipeSearchCardInfoPartp2.innerHTML = totalfilteredlist[currentlyShowingSearchNum][3] + " Minutes";
+            recipeSearchCardInfoPart1.append(recipeSearchCardInfoPartp2);
+
+            let recipeSearchCardInfoDivider = document.createElement('div');
+            recipeSearchCardInfoDivider.classList.add('recipeSearchCardInfoDivider');
+            recipeSearchCardInfo.append(recipeSearchCardInfoDivider);
+
+            let recipeSearchCardInfoPart2 = document.createElement('div');
+            recipeSearchCardInfoPart2.classList.add('recipeSearchCardInfoPart');
+            recipeSearchCardInfo.append(recipeSearchCardInfoPart2);
+
+            let recipeSearchCardInfoPartp3 = document.createElement('p');
+            recipeSearchCardInfoPartp3.innerHTML = totalfilteredlist[currentlyShowingSearchNum][4] + " Calories";
+            recipeSearchCardInfoPart2.append(recipeSearchCardInfoPartp3);
+
+            let recipeSearchCardInfoPartp4 = document.createElement('p');
+            recipeSearchCardInfoPartp4.innerHTML = totalfilteredlist[currentlyShowingSearchNum][5] + "g Protein";
+            recipeSearchCardInfoPart2.append(recipeSearchCardInfoPartp4);
+
+            let recipeSearchCardInfoPart3 = document.createElement('div');
+            recipeSearchCardInfoPart3.classList.add('recipeSearchCardInfoPart');
+            recipeSearchCardInfo.append(recipeSearchCardInfoPart3);
+
+            let recipeSearchCardInfoPartp5 = document.createElement('p');
+            recipeSearchCardInfoPartp5.innerHTML = totalfilteredlist[currentlyShowingSearchNum][6] + "g Carbs";
+            recipeSearchCardInfoPart3.append(recipeSearchCardInfoPartp5);
+
+            let recipeSearchCardInfoPartp6 = document.createElement('p');
+            recipeSearchCardInfoPartp6.innerHTML = totalfilteredlist[currentlyShowingSearchNum][7] + "g Fat";
+            recipeSearchCardInfoPart3.append(recipeSearchCardInfoPartp6);
+
+            recipeSearchCardContainer.animate([
+                { scale: '85%', opacity: '40%' },
+                { scale: '100%', opacity: '100%' }
+                // {transform: "translateX(-50px)", opacity: '0%'},
+                // {transform: "translateX(0px)", opacity: '100%'}
+            ], {
+                duration: 300,
+                fill: 'forwards'
+            });
+
+            currentlyShowingSearchNum++;
+        }
+        if (currentlyShowingSearchNum >= totalfilteredlist.length) {
+            document.getElementById("recipeSearchLoadMoreButton").style.display = "none";
+        }
+    }
+
+    let recipeCards = document.querySelectorAll(".recipeSearchCardContainer");
+    for (let i = 0; i < recipeCards.length; i++) {
+        recipeCards[i].addEventListener("click", function () {
+            sessionStorage.setItem("recipe", this.id);
+            // temploadrecipe.innerHTML = this.id;
+            location.href = "recipepage.html?recipe=" + this.id;
+        });
+    }
+}
 
 
 function shuffle(array) {
@@ -102,21 +207,11 @@ function shuffle(array) {
     return array;
 }
 
-
-let recipeCards = document.querySelectorAll(".reciperecentlyaddedslide");
-for (let i = 0; i < recipeCards.length; i++) {
-    recipeCards[i].addEventListener("click", function () {
-        sessionStorage.setItem("recipe", this.id);
-        // temploadrecipe.innerHTML = this.id;
-        location.href = "recipepage.html?recipe=" + this.id;
-    });
-}
-
 function searchrecipe() {
     var calorieMin = Math.max(document.getElementById("calorieMin").value, 0);
-    var calorieMax = Math.min(document.getElementById("calorieMax").value, 1000);
+    var calorieMax = Math.min(document.getElementById("calorieMax").value, 2000);
     var proteinMin = Math.max(document.getElementById("proteinMin").value, 0);
-    var proteinMax = Math.min(document.getElementById("proteinMax").value, 500);
+    var proteinMax = Math.min(document.getElementById("proteinMax").value, 200);
     var carbsMin = Math.max(document.getElementById("carbsMin").value, 0);
     var carbsMax = Math.min(document.getElementById("carbsMax").value, 200);
     var fatMin = Math.max(document.getElementById("fatMin").value, 0);

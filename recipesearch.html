@@ -29,7 +29,7 @@
         </nav>
     </header>
     <section class="recipeSearchResultNumSection">
-        <p>Results( )</p>
+        <p  id="resultsfoundtext">Loading Results...</p>
     </section>
     <section class="recipeSearchSection">
         <div class="recipesHeaderSearchDiv">
@@ -42,8 +42,8 @@
                         <div class="progress"></div>
                     </div>
                     <div class="sliderRangeInput">
-                        <input type="range" class="minRangeInput" min="0" max="1000" value="0" step="10">
-                        <input type="range" class="maxRangeInput" min="0" max="1000" value="1000" step="10">
+                        <input type="range" class="minRangeInput" min="0" max="2000" value="0" step="10">
+                        <input type="range" class="maxRangeInput" min="0" max="2000" value="3000" step="10">
                     </div>
                     <div class="recipesHeaderSearchBoxInputDiv">
                         <div>
@@ -53,7 +53,7 @@
                         <h1>~</h1>
                         <div>
                             <h1>max calories</h1>
-                            <input type="number" class="maxInput" value="1000" id="calorieMax">
+                            <input type="number" class="maxInput" value="2000" id="calorieMax">
                         </div>
                     </div>
                 </div>
@@ -63,8 +63,8 @@
                         <div class="progress"></div>
                     </div>
                     <div class="sliderRangeInput two">
-                        <input type="range" class="minRangeInput" min="0" max="500" value="0" step="5">
-                        <input type="range" class="maxRangeInput" min="0" max="500" value="500" step="5">
+                        <input type="range" class="minRangeInput" min="0" max="200" value="0" step="5">
+                        <input type="range" class="maxRangeInput" min="0" max="200" value="200" step="5">
                     </div>
                     <div class="recipesHeaderSearchBoxInputDiv two">
                         <div>
@@ -74,7 +74,7 @@
                         <h1>~</h1>
                         <div>
                             <h1>max protein</h1>
-                            <input type="number" class="maxInput" value="500" id="proteinMax">
+                            <input type="number" class="maxInput" value="200" id="proteinMax">
                         </div>
                     </div>
                 </div>
@@ -126,8 +126,35 @@
                     onclick="searchrecipe()">Search</button>
             </div>
         </div>
-        <div class="recipeSearchResultDiv">
+        <div class="recipeSearchResultDiv" id="recipeSearchResultDiv">
+            <div class="recipeSearchResultDivTop" id="recipeSearchResultDivTop">
 
+            </div>
+            <button type="button" class="recipeSearchLoadMoreButton" id="recipeSearchLoadMoreButton" onclick="loadSearchCards()" style="display: none">Load More</button>
+            <!-- <div class="recipeSearchCardContainer">
+                <img class="recipeSearchCardBackImg" src="images/apple.jpg">
+                <div class="recipeSearchCard">
+                    <img src="images/gray.jpg">
+                    <div class="recipeSearchCardText">
+                        <p class="recipeSearchCardRecipe">Strawberry Maple Pancakes with also you know</p>
+                        <div class="recipeSearchCardInfo">
+                            <div class="recipeSearchCardInfoPart">
+                                <p>2 servings</p>
+                                <p>20 Minutes</p>
+                            </div>
+                            <div class="recipeSearchCardInfoDivider"></div>
+                            <div class="recipeSearchCardInfoPart">
+                                <p>400 Calories</p>
+                                <p>20g Protein</p>
+                            </div>
+                            <div class="recipeSearchCardInfoPart">
+                                <p>58g Carbs</p>
+                                <p>28g Fat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
         </div>
     </section>
     <!-- <section>
@@ -243,6 +270,20 @@
             </div>
     </section> -->
     <section>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
+        <div class="emptybox"></div>
         <div class="emptybox"></div>
         <div class="emptybox"></div>
     </section>

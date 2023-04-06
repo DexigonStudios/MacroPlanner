@@ -2,14 +2,14 @@ const rangeInput = document.querySelectorAll(".sliderRangeInput input"),
     numInput = document.querySelectorAll(".recipesHeaderSearchBoxInputDiv input"),
     progress = document.querySelector(".sliderInput .progress");
 
-let rangeGap = 100;
+let rangeGap = 200;
 
 numInput.forEach(input => {
     input.addEventListener("input", e => {
         let minVal = parseInt(numInput[0].value),
             maxVal = parseInt(numInput[1].value);
 
-        if (maxVal - minVal >= rangeGap && maxVal <= 1000) {
+        if (maxVal - minVal >= rangeGap && maxVal <= 2000) {
             if (e.target.className === "minInput") {
                 rangeInput[0].value = minVal;
                 progress.style.left = (minVal / rangeInput[0].max) * 100 + "%";
@@ -47,14 +47,14 @@ const rangeInput2 = document.querySelectorAll(".sliderRangeInput.two input"),
     numInput2 = document.querySelectorAll(".recipesHeaderSearchBoxInputDiv.two input"),
     progress2 = document.querySelector(".sliderInput.two .progress");
 
-let rangeGap2 = 50;
+let rangeGap2 = 20;
 
 numInput2.forEach(input => {
     input.addEventListener("input", e => {
         let minVal = parseInt(numInput2[0].value),
             maxVal = parseInt(numInput2[1].value);
 
-        if (maxVal - minVal >= rangeGap2 && maxVal <= 500) {
+        if (maxVal - minVal >= rangeGap2 && maxVal <= 200) {
             if (e.target.className === "minInput") {
                 rangeInput2[0].value = minVal;
                 progress2.style.left = (minVal / rangeInput2[0].max) * 100 + "%";
