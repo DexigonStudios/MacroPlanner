@@ -8,7 +8,7 @@ fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNG
         recipelist = recipelist[0];
         recipelist.shift();
 
-        var recipeCount = 18;
+        var recipeCount = recipelist.length;
 
         var holdNumList = [];
 

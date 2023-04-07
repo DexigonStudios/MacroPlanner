@@ -2,7 +2,7 @@ const rangeInput = document.querySelectorAll(".sliderRangeInput input"),
     numInput = document.querySelectorAll(".recipesHeaderSearchBoxInputDiv input"),
     progress = document.querySelector(".sliderInput .progress");
 
-let rangeGap = 200;
+let rangeGap = 100;
 
 numInput.forEach(input => {
     input.addEventListener("input", e => {
@@ -47,7 +47,7 @@ const rangeInput2 = document.querySelectorAll(".sliderRangeInput.two input"),
     numInput2 = document.querySelectorAll(".recipesHeaderSearchBoxInputDiv.two input"),
     progress2 = document.querySelector(".sliderInput.two .progress");
 
-let rangeGap2 = 20;
+let rangeGap2 = 10;
 
 numInput2.forEach(input => {
     input.addEventListener("input", e => {
@@ -91,7 +91,7 @@ const rangeInput3 = document.querySelectorAll(".sliderRangeInput.three input"),
     numInput3 = document.querySelectorAll(".recipesHeaderSearchBoxInputDiv.three input"),
     progress3 = document.querySelector(".sliderInput.three .progress");
 
-let rangeGap3 = 20;
+let rangeGap3 = 10;
 
 numInput3.forEach(input => {
     input.addEventListener("input", e => {
@@ -136,7 +136,7 @@ const rangeInput4 = document.querySelectorAll(".sliderRangeInput.four input"),
     numInput4 = document.querySelectorAll(".recipesHeaderSearchBoxInputDiv.four input"),
     progress4 = document.querySelector(".sliderInput.four .progress");
 
-let rangeGap4 = 20;
+let rangeGap4 = 10;
 
 numInput4.forEach(input => {
     input.addEventListener("input", e => {
