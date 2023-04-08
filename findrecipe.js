@@ -1,5 +1,4 @@
 window.addEventListener('load', () => {
-
     let parameters = new URLSearchParams(window.location.search);
 
     calorieMin = parameters.get("calMin");
@@ -28,12 +27,60 @@ window.addEventListener('load', () => {
     document.querySelectorAll(".recipesHeaderSearchBoxInputDiv.three input")[1].dispatchEvent(new Event("input"));
     document.querySelectorAll(".recipesHeaderSearchBoxInputDiv.four input")[0].dispatchEvent(new Event("input"));
     document.querySelectorAll(".recipesHeaderSearchBoxInputDiv.four input")[1].dispatchEvent(new Event("input"));
+
+
+    if (typeof localStorage !== 'undefined') {
+        const recipeFile = localStorage.getItem('recipeFile');
+        const recipeFileExpDate = localStorage.getItem('recipeFileExpDate');
+
+        const date = new Date().setSeconds(new Date().getSeconds() + 600);
+
+        if (recipeFile) {
+            const checkExpire = (new Date()).getTime() > JSON.parse(recipeFileExpDate).expDate;
+            if (checkExpire) {
+                fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNGQMOT8xvXCzScRtYXEhzVA9IhU7LN6ErozdCw/exec')
+                    .then(res => res.json())
+                    .then(data => {
+                        let recipelist = [];
+                        Object.values(data).forEach(val => recipelist.push(val));
+                        localStorage.setItem('recipeFile', JSON.stringify(recipelist[0]));
+                        localStorage.setItem('recipeFileExpDate', JSON.stringify({
+                            expDate: date,
+                        }));
+                        loadIndexPage(localStorage.getItem('recipeFile'));
+                    })
+            } else {
+                loadIndexPage(localStorage.getItem('recipeFile'));
+            }
+
+        } else {
+            fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNGQMOT8xvXCzScRtYXEhzVA9IhU7LN6ErozdCw/exec')
+                .then(res => res.json())
+                .then(data => {
+                    let recipelist = [];
+                    Object.values(data).forEach(val => recipelist.push(val));
+                    localStorage.setItem('recipeFile', JSON.stringify(recipelist[0]));
+                    localStorage.setItem('recipeFileExpDate', JSON.stringify({
+                        expDate: date,
+                    }));
+                    loadIndexPage(localStorage.getItem('recipeFile'));
+                })
+        }
+    } else {
+        fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNGQMOT8xvXCzScRtYXEhzVA9IhU7LN6ErozdCw/exec')
+            .then(res => res.json())
+            .then(data => {
+                let recipelist = [];
+                Object.values(data).forEach(val => recipelist.push(val));
+                loadIndexPage(JSON.stringify(recipelist[0]));
+            })
+    }
 })
 
-fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNGQMOT8xvXCzScRtYXEhzVA9IhU7LN6ErozdCw/exec')
-    .then(res => res.json())
-    .then(data => {
+function loadIndexPage(data) {
         let recipelist = [];
+
+    recipelist = JSON.parse(data);
 
         let filteredlist = [];
         currentlyShowingSearchNum = 0;
@@ -43,7 +90,7 @@ fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNG
 
         Object.values(data).forEach(val => recipelist.push(val));
 
-        filteredlist = recipelist[0];
+        filteredlist = recipelist;
 
         filteredlist = filteredlist.filter((filteredlist) => {
             return (parseInt(filteredlist[4]) >= calorieMin && parseInt(filteredlist[4]) <= calorieMax);
@@ -83,7 +130,7 @@ fetch('https://script.google.com/macros/s/AKfycbweBXTy56rMSExNExD0RH2kONYYDxHCNG
         // }
 
 
-    })
+    }
 
 
 
