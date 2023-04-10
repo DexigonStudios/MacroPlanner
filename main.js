@@ -53,40 +53,65 @@ function loadIndexPage(data) {
 
     temp = JSON.parse(data);
 
+    var popularNumList = [];
+    var usedNumList = [0];
+
+    for(let i = 0; i<temp.length; i++){
+        if(temp[i][12]){
+            popularNumList.push(temp[i][0]);
+        }
+    }
+
+    console.log(popularNumList);
 
         for(let i = 1; i<=8; i++){
-            document.getElementById(i+"link").id = temp[i][0];
-            document.getElementById(i+"link2").id = temp[i][0];
-            document.getElementById(i+"i").src = temp[i][8];
-            document.getElementById(i+"i2").src = temp[i][8];
-            document.getElementById(i+"t").innerHTML = temp[i][1];
-            document.getElementById(i+"t2").innerHTML = temp[i][1];
-            document.getElementById(i+"cal").innerHTML = temp[i][4] + " Calories";
-            document.getElementById(i+"pro").innerHTML = temp[i][5] + "g Protein";
-            document.getElementById(i+"car").innerHTML = temp[i][6] + "g Carbs";
-            document.getElementById(i+"fat").innerHTML = temp[i][7] + "g Fat";
-            document.getElementById(i+"cal2").innerHTML = temp[i][4] + " Calories";
-            document.getElementById(i+"pro2").innerHTML = temp[i][5] + "g Protein";
-            document.getElementById(i+"car2").innerHTML = temp[i][6] + "g Carbs";
-            document.getElementById(i+"fat2").innerHTML = temp[i][7] + "g Fat";
+            document.getElementById(i+"link").id = temp[popularNumList[i]][0];
+            document.getElementById(i+"link2").id = temp[popularNumList[i]][0];
+            document.getElementById(i+"i").src = temp[popularNumList[i]][8];
+            document.getElementById(i+"i2").src = temp[popularNumList[i]][8];
+            document.getElementById(i+"t").innerHTML = temp[popularNumList[i]][1];
+            document.getElementById(i+"t2").innerHTML = temp[popularNumList[i]][1];
+            document.getElementById(i+"cal").innerHTML = temp[popularNumList[i]][4] + " Calories";
+            document.getElementById(i+"pro").innerHTML = temp[popularNumList[i]][5] + "g Protein";
+            document.getElementById(i+"car").innerHTML = temp[popularNumList[i]][6] + "g Carbs";
+            document.getElementById(i+"fat").innerHTML = temp[popularNumList[i]][7] + "g Fat";
+            document.getElementById(i+"cal2").innerHTML = temp[popularNumList[i]][4] + " Calories";
+            document.getElementById(i+"pro2").innerHTML = temp[popularNumList[i]][5] + "g Protein";
+            document.getElementById(i+"car2").innerHTML = temp[popularNumList[i]][6] + "g Carbs";
+            document.getElementById(i+"fat2").innerHTML = temp[popularNumList[i]][7] + "g Fat";
         }
 
         for(let i = 1; i<=8; i++){
-            document.getElementById(i+"link3").id = temp[i+10][0];
-            document.getElementById(i+"link4").id = temp[i+10][0];
-            document.getElementById(i+"i3").src = temp[i+10][8];
-            document.getElementById(i+"i4").src = temp[i+10][8];
-            document.getElementById(i+"t3").innerHTML = temp[i+10][1];
-            document.getElementById(i+"t4").innerHTML = temp[i+10][1];
-            document.getElementById(i+"cal3").innerHTML = temp[i+10][4] + " Calories";
-            document.getElementById(i+"pro3").innerHTML = temp[i+10][5] + "g Protein";
-            document.getElementById(i+"car3").innerHTML = temp[i+10][6] + "g Carbs";
-            document.getElementById(i+"fat3").innerHTML = temp[i+10][7] + "g Fat";
-            document.getElementById(i+"cal4").innerHTML = temp[i+10][4] + " Calories";
-            document.getElementById(i+"pro4").innerHTML = temp[i+10][5] + "g Protein";
-            document.getElementById(i+"car4").innerHTML = temp[i+10][6] + "g Carbs";
-            document.getElementById(i+"fat4").innerHTML = temp[i+10][7] + "g Fat";
+            document.getElementById(i+"link3").id = temp[temp.length-9+i][0];
+            document.getElementById(i+"link4").id = temp[temp.length-9+i][0];
+            document.getElementById(i+"i3").src = temp[temp.length-9+i][8];
+            document.getElementById(i+"i4").src = temp[temp.length-9+i][8];
+            document.getElementById(i+"t3").innerHTML = temp[temp.length-9+i][1];
+            document.getElementById(i+"t4").innerHTML = temp[temp.length-9+i][1];
+            document.getElementById(i+"cal3").innerHTML = temp[temp.length-9+i][4] + " Calories";
+            document.getElementById(i+"pro3").innerHTML = temp[temp.length-9+i][5] + "g Protein";
+            document.getElementById(i+"car3").innerHTML = temp[temp.length-9+i][6] + "g Carbs";
+            document.getElementById(i+"fat3").innerHTML = temp[temp.length-9+i][7] + "g Fat";
+            document.getElementById(i+"cal4").innerHTML = temp[temp.length-9+i][4] + " Calories";
+            document.getElementById(i+"pro4").innerHTML = temp[temp.length-9+i][5] + "g Protein";
+            document.getElementById(i+"car4").innerHTML = temp[temp.length-9+i][6] + "g Carbs";
+            document.getElementById(i+"fat4").innerHTML = temp[temp.length-9+i][7] + "g Fat";
         }
+
+        for(let i = 1; i<=15; i++){
+            let tempRand = generateRandom(1, usedNumList, temp.length)[0];
+            usedNumList.push(tempRand);
+            document.getElementById(i+"linke").id = temp[tempRand][0];
+            document.getElementById(i+"ie").src = temp[tempRand][8];
+            document.getElementById(i+"te").innerHTML = temp[tempRand][1];
+            document.getElementById(i+"cale").innerHTML = temp[tempRand][4] + " Calories";
+            document.getElementById(i+"proe").innerHTML = temp[tempRand][5] + "g Protein";
+            document.getElementById(i+"care").innerHTML = temp[tempRand][6] + "g Carbs";
+            document.getElementById(i+"fate").innerHTML = temp[tempRand][7] + "g Fat";
+        }
+
+
+
     }
 
 
@@ -116,3 +141,17 @@ function searchrecipe() {
 
     location.href = "recipesearch.html?calMin=" + calorieMin + "&calMax=" + calorieMax + "&proMin=" + proteinMin + "&proMax=" + proteinMax + "&carMin=" + carbsMin + "&carMax=" + carbsMax + "&fatMin=" + fatMin + "&fatMax=" + fatMax;
 }
+
+
+const generateRandom = (len, absentArray, range) => {
+    const randomArray = [];
+    for(let i = 0; i < len; ){
+       const random = Math.floor(Math.random() * range);
+    if(!absentArray.includes(random) &&
+       !randomArray.includes(random)){
+          randomArray.push(random);
+          i++;
+       }
+    };
+    return randomArray;
+ }

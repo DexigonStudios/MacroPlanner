@@ -1052,6 +1052,15 @@ footer {
     margin: 0px 55px 0px 15px;
 }
 
+.exploreRecipeDiv {
+    display: flex;
+    justify-content:space-between;
+    align-content: center;
+    width: 1230px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 45px;
+}
 
 
 
@@ -1363,6 +1372,218 @@ footer {
     opacity: 1;
 }
 
+/* Blog */
+
+.mainBlogDiv {
+    cursor: pointer;
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+    transition: 0.4s ease;
+}
+
+.mainBlogImgContainer{
+    width: 700px;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.mainBlogDiv:hover{
+    transform: scale(101%);
+}
+
+.mainBlogImg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.mainBlogDiv:hover .mainBlogImg{
+    filter: brightness(80%);
+    transform: scale(105%);
+}
+
+.mainBlogDiv p{
+    width: 400px;
+}
+
+.mainBlogTitle{
+    color: rgb(0, 0, 0);
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    font-weight: bolder;
+    text-shadow: 0.1px 0 0 currentColor;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.mainBlogDate{
+    color: rgba(0, 0, 0, 0.75);
+    margin: 0;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    padding: 0;
+    font-size: 17px;
+    font-weight: thin;
+    text-shadow: 0.1px 0 0 currentColor;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.mainBlogText{
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+    font-weight: thin;
+    text-shadow: 0.1px 0 0 currentColor;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.mainBlogReadMore{
+    color: #D6821D;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    font-size: 19px;
+    font-weight: bold;
+    text-shadow: 0.1px 0 0 currentColor;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.allBlogsDiv {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.blogCardContainer{
+    cursor: pointer;
+    display: inline-block;
+    width: 340px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    transition: 0.4s ease;
+}
+
+.blogCardContainer:hover{
+    transform: scale(101%);
+}
+
+.blogCardImgContainer{
+    width: 340px;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.blogCardImg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.blogCardContainer:hover .blogCardImg{
+    filter: brightness(80%);
+    transform: scale(105%);
+}
+
+.blogTitle{
+    color: rgb(0, 0, 0);
+    margin: 0;
+    margin-top: -5px;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.blogDate{
+    color: rgba(0, 0, 0, 0.75);
+    margin: 0;
+    margin-top: -15px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: thin;
+    text-shadow: 0.1px 0 0 currentColor;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.blogReadMore{
+    color: #D6821D;
+    margin: 0;
+    margin-top: -10px;
+    margin-bottom: -25px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: thin;
+    text-shadow: 0.1px 0 0 currentColor;
+    text-align: left;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Contact */
 
@@ -1373,7 +1594,7 @@ footer {
     justify-content: center;
     height: 120px;
     padding: 0;
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 40px 0px;
 }
 
 

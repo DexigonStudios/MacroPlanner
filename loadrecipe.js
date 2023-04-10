@@ -52,6 +52,7 @@ window.addEventListener('load', () => {
 
 function loadIndexPage(data) {
         let recipelist = [];
+        var usedNumList = [0];
 
         recipelist = [JSON.parse(data), 0];
 
@@ -160,6 +161,18 @@ function loadIndexPage(data) {
         });
 
 
+        for(let i = 1; i<=10; i++){
+            let tempRand = generateRandom(1, usedNumList, recipelist[0].length)[0];
+            usedNumList.push(tempRand);
+            document.getElementById(i+"linke").id = recipelist[0][tempRand][0];
+            document.getElementById(i+"ie").src = recipelist[0][tempRand][8];
+            document.getElementById(i+"te").innerHTML = recipelist[0][tempRand][1];
+            document.getElementById(i+"cale").innerHTML = recipelist[0][tempRand][4] + " Calories";
+            document.getElementById(i+"proe").innerHTML = recipelist[0][tempRand][5] + "g Protein";
+            document.getElementById(i+"care").innerHTML = recipelist[0][tempRand][6] + "g Carbs";
+            document.getElementById(i+"fate").innerHTML = recipelist[0][tempRand][7] + "g Fat";
+        }
+
     }
 
 
@@ -188,8 +201,7 @@ function deleteRow(arr, row) {
     return arr;
 }
 
-
-let recipeCards = document.querySelectorAll(".recipeWideCardContainer");
+let recipeCards = document.querySelectorAll(".recipeSmallCardContainer");
 for (let i = 0; i < recipeCards.length; i++) {
     recipeCards[i].addEventListener("click", function () {
         sessionStorage.setItem("recipe", this.id);
@@ -197,3 +209,26 @@ for (let i = 0; i < recipeCards.length; i++) {
         location.href = "recipepage.html?recipe=" + this.id;
     });
 }
+
+let recipeCards2 = document.querySelectorAll(".recipeWideCardContainer");
+for (let i = 0; i < recipeCards2.length; i++) {
+    recipeCards2[i].addEventListener("click", function () {
+        sessionStorage.setItem("recipe", this.id);
+        // temploadrecipe.innerHTML = this.id;
+        location.href = "recipepage.html?recipe=" + this.id;
+    });
+}
+
+
+const generateRandom = (len, absentArray, range) => {
+    const randomArray = [];
+    for(let i = 0; i < len; ){
+       const random = Math.floor(Math.random() * range);
+    if(!absentArray.includes(random) &&
+       !randomArray.includes(random)){
+          randomArray.push(random);
+          i++;
+       }
+    };
+    return randomArray;
+ }

@@ -67,12 +67,15 @@ function loadIndexPage(data) {
     var recipeCount = recipelist.length;
 
     var holdNumList = [];
+    var usedNumList = [];
+
 
 
     let homeRecipeScrollerTrack = document.createElement('div');
     homeRecipeScrollerTrack.classList.add('homeRecipeScrollerTrack');
     for (var i = 0; i < 10; i++) {
-        let tempRand = getRandomInt(recipeCount);
+        let tempRand = generateRandom(1, usedNumList, recipeCount)[0];
+        usedNumList.push(tempRand);
         holdNumList.push(tempRand);
         let homeRecipeScrollerSlide = document.createElement('div');
         let homeRecipeScrollerSlideImg = document.createElement('img');
@@ -99,7 +102,8 @@ function loadIndexPage(data) {
     let homeRecipeScrollerTrack2 = document.createElement('div');
     homeRecipeScrollerTrack2.classList.add('homeRecipeScrollerTrack');
     for (var i = 0; i < 10; i++) {
-        let tempRand = getRandomInt(recipeCount);
+        let tempRand = generateRandom(1, usedNumList, recipeCount)[0];
+        usedNumList.push(tempRand);
         holdNumList.push(tempRand);
         let homeRecipeScrollerSlide = document.createElement('div');
         let homeRecipeScrollerSlideImg = document.createElement('img');
@@ -127,7 +131,8 @@ function loadIndexPage(data) {
     let homeRecipeScrollerTrack3 = document.createElement('div');
     homeRecipeScrollerTrack3.classList.add('homeRecipeScrollerTrack');
     for (var i = 0; i < 10; i++) {
-        let tempRand = getRandomInt(recipeCount);
+        let tempRand = generateRandom(1, usedNumList, recipeCount)[0];
+        usedNumList.push(tempRand);
         holdNumList.push(tempRand);
         let homeRecipeScrollerSlide = document.createElement('div');
         let homeRecipeScrollerSlideImg = document.createElement('img');
@@ -156,7 +161,8 @@ function loadIndexPage(data) {
     let homeRecipeScrollerTrack4 = document.createElement('div');
     homeRecipeScrollerTrack4.classList.add('homeRecipeScrollerTrack');
     for (var i = 0; i < 10; i++) {
-        let tempRand = getRandomInt(recipeCount);
+        let tempRand = generateRandom(1, usedNumList, recipeCount)[0];
+        usedNumList.push(tempRand);
         holdNumList.push(tempRand);
         let homeRecipeScrollerSlide = document.createElement('div');
         let homeRecipeScrollerSlideImg = document.createElement('img');
@@ -185,7 +191,8 @@ function loadIndexPage(data) {
     let homeRecipeScrollerTrack5 = document.createElement('div');
     homeRecipeScrollerTrack5.classList.add('homeRecipeScrollerTrack');
     for (var i = 0; i < 10; i++) {
-        let tempRand = getRandomInt(recipeCount);
+        let tempRand = generateRandom(1, usedNumList, recipeCount)[0];
+        usedNumList.push(tempRand);
         holdNumList.push(tempRand);
         let homeRecipeScrollerSlide = document.createElement('div');
         let homeRecipeScrollerSlideImg = document.createElement('img');
@@ -226,3 +233,16 @@ function loadIndexPage(data) {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
+
+const generateRandom = (len, absentArray, range) => {
+    const randomArray = [];
+    for(let i = 0; i < len; ){
+       const random = Math.floor(Math.random() * range);
+    if(!absentArray.includes(random) &&
+       !randomArray.includes(random)){
+          randomArray.push(random);
+          i++;
+       }
+    };
+    return randomArray;
+ }
