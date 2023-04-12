@@ -31,13 +31,13 @@
     <div class="contactHeader">
         <p>Blog</p>
     </div>
-    <section id="blogPageSection" style="display: none;">
+    <section id="blogSection" style="display: none;">
         <div class="mainBlogDiv" id="mainBlogDiv">
             <p class="mainBlogInfo">
                 <span class="mainBlogTitle" id="mainBlogTitle"></span><br>
                 <span class="mainBlogDate" id="mainBlogDate"></span><br>
                 <span class="mainBlogText" id="mainBlogText"></span><br>
-                <span class="mainBlogReadMore" id="mainBlogReadMore">Read More</span><br>
+                <!-- <span class="mainBlogReadMore" id="mainBlogReadMore">Read More</span><br> -->
             </p>
             <div class="mainBlogImgContainer">
                 <img class="mainBlogImg" id="mainBlogImg" src="images/gray.jpg">
@@ -57,18 +57,21 @@
             </div> -->
         </div>
     </section>
-    <section class="place">
-        <div class="longeremptybox"></div>
-    </section>
-    <section id="blogPageEmptySection" style="display: block;">
-        <div class="longeremptybox"></div>
-        <div class="longeremptybox"></div>
-        <div class="longeremptybox"></div>
-    </section>
-    <footer>
-        123 Main Street • 555-555-5555 • support@us.com
-    </footer>
-    <script src="./blog.js"></script>
+    <section id="emptySection" style="display: block;">
+        <div class="emptySection">
+            <img class="loadingCircleImg" src="images/loading-gif2.gif">
+            <div class="longeremptybox"></div>
+            <div class="longeremptybox"></div>
+            <div class="longeremptybox"></div>
+        </div>
+        </section>
+        <section class="place">
+            <div class="longemptybox"></div>
+        </section>
+        <footer>
+            123 Main Street • 555-555-5555 • support@us.com
+        </footer>
+        <script src="./blog.js"></script>
 </body>
 
 </html>

@@ -59,14 +59,22 @@ function loadBlogPage(data) {
 
     var blogCount = bloglist.length;
 
-    document.getElementById("blogPageSection").style.display = "block";
-    document.getElementById("blogPageEmptySection").style.display = "none";
+    document.getElementById("blogSection").style.display = "block";
+    document.getElementById("emptySection").style.display = "none";
 
     document.getElementById("mainBlogTitle").innerHTML = bloglist[blogCount-1][1];
     document.getElementById("mainBlogDate").innerHTML = bloglist[blogCount-1][2];
-    document.getElementById("mainBlogText").innerHTML = bloglist[blogCount-1][3];
+    
     document.getElementById("mainBlogDiv").id = bloglist[blogCount-1][0];
     document.getElementById("mainBlogImg").src = bloglist[blogCount-1][4];
+
+    var mainBloglist = bloglist[blogCount - 1][3].split('@@');
+
+    if(mainBloglist.length > 1){
+        document.getElementById("mainBlogText").innerHTML = mainBloglist[1];
+    } else {
+        document.getElementById("mainBlogText").innerHTML = mainBloglist[0];
+    }
 
 
 
@@ -96,9 +104,9 @@ function loadBlogPage(data) {
         p.append(blogTitle);
         p.append(document.createElement('br'));
         p.append(blogDate);
-        p.append(document.createElement('br'));
-        p.append(blogReadMore);
-        p.append(document.createElement('br'));
+        // p.append(document.createElement('br'));
+        // p.append(blogReadMore);
+        // p.append(document.createElement('br'));
         blogCardContainer.append(p);
         document.getElementById("allBlogsDiv").append(blogCardContainer);
     }
